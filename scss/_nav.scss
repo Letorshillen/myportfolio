@@ -42,12 +42,12 @@ nav{
         background-color: $primary-color;
 
         &:nth-child(1) {
-            transform: rotate(45deg) translate(5%, 1%);
+            transform: translateZ(0) rotate(-315deg);
             
         }
 
         &:nth-child(2) {
-            transform: rotate(-45deg) translate(5%, 0);
+            transform: translateZ(0) translateY(-60%) rotate(-225deg);
         }
 
         &:nth-child(3) {

@@ -4,6 +4,8 @@
     height: 90vh;
     margin-bottom: 30px;
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .hero__wrapper{
@@ -13,14 +15,19 @@
 }
 
 .hero__h1{
+    font-size: 40px;
     text-align: left;
     margin: 0 50px;
+
+    @include mobile{
+        font-size: 60px;
+    }
 }
 
 .js__cta__hero{
     position: fixed;
     bottom: 30%;
-    right: 20%;
+    right: auto;
     display: inline-block;
     
     transition: all 0.5s ease-out;

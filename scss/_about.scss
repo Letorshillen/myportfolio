@@ -45,36 +45,34 @@
     width: 100%;
     height: 20px;
     background-color: $highlight-color2;
-
-    &:after{
-        position: absolute;
-        content: "";
-        height: 20px;
-        background-color: $highlight-color;
-    }
-
 }
 
-.design__line:after{
+.item__line{
+    position: absolute;
+    height: 20px;
+    background-color: $highlight-color;
+}
+
+.item1__line{
     width: 70%;
 }
 
-.html__line:after{
+.item2__line{
     width: 60%;
 }
 
-.css__line:after{
+.item3__line{
     width: 50%;
 }
 
-.ae__line:after{
+.item4__line{
     width: 40%;
 }
 
-.js__line:after{
+.item5__line{
     width: 30%;
 }
 
-.video__line:after{
+.item6__line{
     width: 30%;
 }

@@ -48,13 +48,13 @@ nav {
 }
 
 .js__nav--close .burger__line:nth-child(1) {
-  -webkit-transform: rotate(45deg) translate(5%, 1%);
-          transform: rotate(45deg) translate(5%, 1%);
+  -webkit-transform: translateZ(0) rotate(-315deg);
+          transform: translateZ(0) rotate(-315deg);
 }
 
 .js__nav--close .burger__line:nth-child(2) {
-  -webkit-transform: rotate(-45deg) translate(5%, 0);
-          transform: rotate(-45deg) translate(5%, 0);
+  -webkit-transform: translateZ(0) translateY(-60%) rotate(-225deg);
+          transform: translateZ(0) translateY(-60%) rotate(-225deg);
 }
 
 .js__nav--close .burger__line:nth-child(3) {
@@ -158,6 +158,12 @@ nav {
   height: 90vh;
   margin-bottom: 30px;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .hero__wrapper {
@@ -171,14 +177,21 @@ nav {
 }
 
 .hero__h1 {
+  font-size: 40px;
   text-align: left;
   margin: 0 50px;
+}
+
+@media (min-width: 480px) {
+  .hero__h1 {
+    font-size: 60px;
+  }
 }
 
 .js__cta__hero {
   position: fixed;
   bottom: 30%;
-  right: 20%;
+  right: auto;
   display: inline-block;
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
@@ -290,34 +303,33 @@ nav {
   background-color: #c6c1bd;
 }
 
-.skill__line:after {
+.item__line {
   position: absolute;
-  content: "";
   height: 20px;
   background-color: #f5aa42;
 }
 
-.design__line:after {
+.item1__line {
   width: 70%;
 }
 
-.html__line:after {
+.item2__line {
   width: 60%;
 }
 
-.css__line:after {
+.item3__line {
   width: 50%;
 }
 
-.ae__line:after {
+.item4__line {
   width: 40%;
 }
 
-.js__line:after {
+.item5__line {
   width: 30%;
 }
 
-.video__line:after {
+.item6__line {
   width: 30%;
 }
 
@@ -467,6 +479,7 @@ main {
 }
 
 section {
+  overflow: hidden;
   padding: 60px 0;
   margin-bottom: 50px;
 }
@@ -548,6 +561,7 @@ p {
 }
 
 footer {
+  position: relative;
   font-weight: 300;
   display: -webkit-box;
   display: -ms-flexbox;

@@ -27,6 +27,7 @@ main{
 }
 
 section{
+    overflow: hidden;
     padding: 60px 0;
     margin-bottom: 50px;
 
@@ -93,6 +94,7 @@ p{
 }
 
 footer{
+    position: relative;
     font-weight: 300;
     display: flex;
     align-items: center;
