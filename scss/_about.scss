@@ -1,0 +1,80 @@
+.container__me{
+    margin: 30px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.about__img{
+    width: 300px;
+    height: 300px;
+    border-radius: 5%;
+    object-fit: cover;
+    margin: 20px 0;
+}
+
+.text__about{
+    text-align: center;
+    
+    @include desktop{
+        width: 80%;
+    }
+}
+
+.container__skill{
+    margin: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content__skill{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.skill__name{
+    color: $highlight-color2;
+    z-index: 2;
+}
+
+.skill__line{
+    position: relative;
+    width: 100%;
+    height: 20px;
+    background-color: $highlight-color2;
+
+    &:after{
+        position: absolute;
+        content: "";
+        height: 20px;
+        background-color: $highlight-color;
+    }
+
+}
+
+.design__line:after{
+    width: 70%;
+}
+
+.html__line:after{
+    width: 60%;
+}
+
+.css__line:after{
+    width: 50%;
+}
+
+.ae__line:after{
+    width: 40%;
+}
+
+.js__line:after{
+    width: 30%;
+}
+
+.video__line:after{
+    width: 30%;
+}
