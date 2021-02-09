@@ -9,6 +9,10 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     width: 100%;
     margin: 0;
@@ -42,8 +46,6 @@ h3 {
 
 h1{
     font-size: 4em;
-    //opacity: 0.8;
-    //text-shadow: 2px 2px 0px $primary-color;
     text-align: center;
     margin-bottom: 30px;
 

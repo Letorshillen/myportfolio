@@ -32,7 +32,7 @@ nav{
 }
 
 
-.js__nav__close {
+.js__nav--close {
     
     transform: rotate(0.5turn);
     top: 10px;
@@ -109,7 +109,7 @@ nav{
     }
 }
 
-.js__nav__inner__close{
+.js__nav__inner--close{
     height: 100vh;
 
     @include tablet{

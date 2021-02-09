@@ -36,28 +36,28 @@ nav {
   }
 }
 
-.js__nav__close {
+.js__nav--close {
   -webkit-transform: rotate(0.5turn);
           transform: rotate(0.5turn);
   top: 10px;
 }
 
-.js__nav__close .burger__line {
+.js__nav--close .burger__line {
   margin: 0;
   background-color: #22160f;
 }
 
-.js__nav__close .burger__line:nth-child(1) {
+.js__nav--close .burger__line:nth-child(1) {
   -webkit-transform: rotate(45deg) translate(5%, 1%);
           transform: rotate(45deg) translate(5%, 1%);
 }
 
-.js__nav__close .burger__line:nth-child(2) {
+.js__nav--close .burger__line:nth-child(2) {
   -webkit-transform: rotate(-45deg) translate(5%, 0);
           transform: rotate(-45deg) translate(5%, 0);
 }
 
-.js__nav__close .burger__line:nth-child(3) {
+.js__nav--close .burger__line:nth-child(3) {
   opacity: 0;
 }
 
@@ -130,12 +130,12 @@ nav {
   }
 }
 
-.js__nav__inner__close {
+.js__nav__inner--close {
   height: 100vh;
 }
 
 @media (min-width: 768px) {
-  .js__nav__inner__close {
+  .js__nav__inner--close {
     height: 50px;
   }
 }
@@ -201,7 +201,7 @@ nav {
   color: #22160f;
 }
 
-.js__cta__scrolled {
+.js__cta--scrolled {
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
   outline: 0;
@@ -219,12 +219,12 @@ nav {
   z-index: 100;
 }
 
-.js__cta__scrolled:hover, .js__cta__scrolled:focus {
+.js__cta--scrolled:hover, .js__cta--scrolled:focus {
   outline: 0;
   background-color: #f5aa42;
 }
 
-.container__me {
+.about__container {
   margin: 30px 0;
   width: 100%;
   display: -webkit-box;
@@ -248,17 +248,17 @@ nav {
   margin: 20px 0;
 }
 
-.text__about {
+.about__text {
   text-align: center;
 }
 
 @media (min-width: 1200px) {
-  .text__about {
+  .about__text {
     width: 80%;
   }
 }
 
-.container__skill {
+.skill__container {
   margin: 20px;
   width: 100%;
   display: -webkit-box;
@@ -273,7 +273,7 @@ nav {
           flex-direction: column;
 }
 
-.content__skill {
+.skill__content {
   width: 100%;
   margin-bottom: 15px;
 }
@@ -321,11 +321,11 @@ nav {
   width: 30%;
 }
 
-.section__work {
+.work__section {
   background: rgba(198, 193, 189, 0.2);
 }
 
-.work__project {
+.work__item {
   width: 100%;
   height: 250px;
   margin: 30px 0;
@@ -335,28 +335,28 @@ nav {
   background-size: cover;
 }
 
-.work__project:hover .h2__work,
-.work__project:hover .text__work,
-.work__project:hover .cta__work {
+.work__item:hover .work__h2,
+.work__item:hover .work__text,
+.work__item:hover .work__cta {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
 }
 
-.work__project:hover .work__project__inner {
+.work__item:hover .work__item__inner {
   background: rgba(198, 193, 189, 0.3);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
 }
 
-.work__project1 {
+.work__item1 {
   background-image: url("../assets/images/project1.jpg");
 }
 
-.work__project2 {
+.work__item2 {
   background-image: url("../assets/images/project2.jpg");
 }
 
-.work__project__inner {
+.work__item__inner {
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -376,19 +376,19 @@ nav {
   transition: all 0.5s ease-out;
 }
 
-.h2__work,
-.text__work {
+.work__h2,
+.work__text {
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
   -webkit-transform: translate3d(-100vw, 0, 0);
           transform: translate3d(-100vw, 0, 0);
 }
 
-.h2__work {
+.work__h2 {
   text-shadow: 1px 1px 0px #22160f;
 }
 
-.cta__work {
+.work__cta {
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
   margin-top: 20px;
@@ -399,12 +399,13 @@ nav {
           transform: translate3d(100vw, 0, 0);
 }
 
-.cta__work:hover, .cta__work:focus {
+.work__cta:hover, .work__cta:focus {
+  outline: 0;
   background-color: #22160f;
   color: #f5aa42;
 }
 
-.container__contact {
+.contact__container {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -418,17 +419,17 @@ nav {
           flex-direction: column;
 }
 
-.text__contact {
+.contact__text {
   text-align: center;
 }
 
 @media (min-width: 1200px) {
-  .text__contact {
+  .contact__text {
     width: 70%;
   }
 }
 
-.cta__contact {
+.contact__cta {
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
   margin-top: 80px;
@@ -437,7 +438,8 @@ nav {
   background-color: #f5aa42;
 }
 
-.cta__contact:hover, .cta__contact:focus {
+.contact__cta:hover, .contact__cta:focus {
+  outline: 0;
   background-color: #22160f;
   color: #f5aa42;
 }
@@ -445,6 +447,10 @@ nav {
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
