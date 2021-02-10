@@ -333,6 +333,71 @@ nav {
   width: 30%;
 }
 
+.about__icons {
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .about__icons {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media (min-width: 1200px) {
+  .about__icons {
+    margin-top: 70px;
+  }
+}
+
+.icon__container {
+  margin: 30px;
+  text-align: center;
+}
+
+.icon__img {
+  overflow: hidden;
+  width: 50%;
+}
+
+@media (min-width: 480px) {
+  .icon__img {
+    width: 30%;
+  }
+}
+
+@media (min-width: 768px) {
+  .icon__img {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .icon__img {
+    width: 60%;
+  }
+}
+
+.desktop {
+  opacity: 0;
+}
+
+.icon__h3 {
+  margin: 15px 0;
+}
+
 .work__section {
   background: rgba(198, 193, 189, 0.2);
 }
@@ -575,6 +640,10 @@ footer {
   width: 100%;
   height: 50px;
   background-color: #22160f;
+}
+
+.footer__link {
+  text-decoration: none;
   color: #f5aa42;
 }
 /*# sourceMappingURL=main.css.map */

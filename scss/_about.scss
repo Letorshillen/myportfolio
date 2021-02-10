@@ -76,3 +76,48 @@
 .item6__line{
     width: 30%;
 }
+
+.about__icons{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include tablet{
+        flex-direction: row;
+    }
+
+    @include desktop{
+        margin-top: 70px;
+    }
+}
+
+.icon__container{
+    margin: 30px;
+    text-align: center;
+}
+
+.icon__img{
+    overflow: hidden;
+    width: 50%;
+
+    @include mobile{
+        width: 30%;
+    }
+    
+    @include tablet{
+        width: 70%;
+    }
+
+    @include desktop{
+        width: 60%;
+    }
+}
+
+.desktop{
+    opacity: 0;
+}
+
+.icon__h3{
+    margin: 15px 0;
+}
