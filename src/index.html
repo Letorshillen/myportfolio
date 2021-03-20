@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tomtomtom</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="./scss/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -31,10 +30,14 @@
 
     <main>
      <section id="hero" class="js__hero">
-         <div class="hero__wrapper">
+         <!-- <div class="hero__wrapper">
              <h1 class="hero__h1">Placeholder <br>for crazy 3d object</h1>
-         </div>
-        <a href="mailto:stom.brehm@t-online.de" class="all__cta js__cta__hero">schreib mir</a>
+         </div> -->
+        <div class="hero__wrapper__cta">
+            <a href="mailto:stom.brehm@t-online.de" class="all__cta js__cta__hero">schreib mir</a>
+            <a href="#about" class="all__cta hero__cta">erfahre mehr</a>
+        </div>
+        <canvas class="hero__canvas"></canvas>
      </section>
 
      <section id="about" class="about__section">
@@ -43,7 +46,7 @@
             <div class="flex">
                 <div class="about__container">
                     <h2 class="about__h2">this is me :)</h2>
-                    <img src="./assets/images/potrait.jpg" alt="me" class="about__img">
+                    <img src="../static/images/potrait.jpg" alt="me" class="about__img">
                     <p class="about__text">
                         hey i like doing front-end-development.
                         actually i am a graphic designer, but that sucks
@@ -425,6 +428,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
-<script src="./assets/js/main.js"></script>    
+<script src="./script.js"></script>       
 </body>
 </html>

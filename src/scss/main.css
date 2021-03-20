@@ -164,48 +164,55 @@ nav {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  overflow-x: hidden;
 }
 
-.hero__wrapper {
-  height: 100%;
+.hero__wrapper__cta {
+  z-index: 99;
+  position: absolute;
+  bottom: 10%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
 }
 
-.hero__h1 {
-  font-size: 40px;
-  text-align: left;
-  margin: 0 50px;
-}
-
-@media (min-width: 480px) {
-  .hero__h1 {
-    font-size: 60px;
+@media (min-width: 768px) {
+  .hero__wrapper__cta {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 30px;
   }
 }
 
+.hero__cta {
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  text-decoration: none;
+  color: #22160f;
+  background-color: #f5aa42;
+}
+
+.hero__cta:hover, .hero__cta:focus {
+  outline: 0;
+  background-color: #22160f;
+  color: #f5aa42;
+}
+
 .js__cta__hero {
-  position: fixed;
   bottom: 30%;
-  right: auto;
-  display: inline-block;
+  right: 30%;
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
   text-decoration: none;
   background-color: #f5aa42;
   color: #22160f;
-}
-
-@media (min-width: 480px) {
-  .js__cta__hero {
-    right: 50%;
-    -webkit-transform: translateX(50%);
-            transform: translateX(50%);
-  }
 }
 
 .js__cta__hero:hover, .js__cta__hero:focus {
@@ -220,7 +227,7 @@ nav {
   outline: 0;
   width: 60px;
   height: 60px;
-  background: url("../assets/images/email.svg"), #c6c1bd;
+  background: url("../../static/images/email.svg"), #c6c1bd;
   background-size: 60%;
   background-position: center;
   background-repeat: no-repeat;
@@ -235,6 +242,12 @@ nav {
 .js__cta--scrolled:hover, .js__cta--scrolled:focus {
   outline: 0;
   background-color: #f5aa42;
+}
+
+.hero__canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .about__container {
@@ -426,11 +439,11 @@ nav {
 }
 
 .work__item1 {
-  background-image: url("../assets/images/project1.jpg");
+  background-image: url("../../static/images/project1.jpg");
 }
 
 .work__item2 {
-  background-image: url("../assets/images/project2.jpg");
+  background-image: url("../../static/images/project2.jpg");
 }
 
 .work__item__inner {
@@ -619,7 +632,9 @@ p {
 }
 
 .all__cta {
-  padding: 12px 60px;
+  text-align: center;
+  width: 200px;
+  line-height: 40px;
   font-size: 16px;
   font-weight: 400;
   border-radius: 24px;
