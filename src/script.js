@@ -262,17 +262,67 @@ const gui = new dat.GUI();
 
 const hero__canvas = document.querySelector(".hero__canvas");
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x22160f);
+// scene.background = new THREE.Color(0x22160f);
+
+/**
+ * Lights
+ */
+// const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
+// scene.add(ambientLight);
 
 //Font loader
 const fontLoader = new THREE.FontLoader();
 
+/**
+ * Textures
+ */
+const textureLoader = new THREE.TextureLoader();
+const particleTextureSpark04 = textureLoader.load("/textures/spark_05.png");
+
+/**
+ * Particles
+ */
+
+const particlesGeometry = new THREE.BufferGeometry();
+const count = 4;
+const positions = new Float32Array(count * 3);
+
+for (let i = 0; i < count * 3; i++) {
+  positions[i] = (Math.random() - 0.5) * 8;
+}
+
+for (let i = 1; i < count * 3; i = i + 3) {
+  positions[i] = Math.random() + 0.8;
+}
+
+particlesGeometry.setAttribute(
+  "position",
+  new THREE.BufferAttribute(positions, 3)
+);
+
+const particlesMaterial = new THREE.PointsMaterial({
+  size: 100,
+  sizeAttenuation: true,
+  color: "#7df9ff",
+});
+particlesMaterial.map = particleTextureSpark04;
+particlesMaterial.transparent = true;
+particlesMaterial.alphaMap = particleTextureSpark04;
+particlesMaterial.depthWrite = false;
+particlesMaterial.blending = THREE.AdditiveBlending;
+
+const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+scene.add(particles);
+
+/**
+ * Font + Geometry
+ */
 fontLoader.load("/fonts/Dystopia_Regular.json", (font) => {
-  const textGeometry = new THREE.TextGeometry("Tom", {
+  const textGeometry = new THREE.TextGeometry("ToM", {
     font: font,
     size: 1,
     height: 0.2,
-    curveSegments: 4,
+    curveSegments: 6,
     bevelEnabled: true,
     bevelThickness: 0.01,
     bevelSize: 0.01,
@@ -282,24 +332,28 @@ fontLoader.load("/fonts/Dystopia_Regular.json", (font) => {
   textGeometry.center();
 
   const material = new THREE.MeshNormalMaterial();
-  // material.wireframe = true;
+  material.roughness = 0.4;
 
   const text = new THREE.Mesh(textGeometry, material);
   scene.add(text);
 
+  // const plane = new THREE.Mesh(new THREE.PlaneGeometry(10, 10), material);
+  // plane.rotation.x = -Math.PI * 0.5;
+  // plane.position.y = -1;
+
+  // scene.add(plane);
+
   const textAnimation = () => {
     const elapsedTime = clock.getElapsedTime();
 
-    text.rotation.y = 0.1 * elapsedTime;
-    text.rotation.x = 2 * elapsedTime;
+    // text.rotation.y = 0.1 * elapsedTime;
+    // text.rotation.x = 1 * elapsedTime;
 
     window.requestAnimationFrame(textAnimation);
   };
 
   textAnimation();
 });
-
-//mesh
 
 //sizes
 const sizes = {
@@ -327,12 +381,14 @@ const camera = new THREE.PerspectiveCamera(
 );
 camera.position.x = 0;
 camera.position.y = 0;
-camera.position.z = 3;
+camera.position.z = 4;
 scene.add(camera);
 
 //controls
 const controls = new OrbitControls(camera, hero__canvas);
 controls.enableDamping = true;
+controls.maxDistance = 7;
+controls.minDistance = 1.5;
 
 //renderer
 
@@ -349,9 +405,6 @@ const clock = new THREE.Clock();
 
 const tick = () => {
   const elapsedTime = clock.getElapsedTime();
-
-  // text.rotation.y = 0.4 * elapsedTime;
-  // text.rotation.x = 0.4 * elapsedTime;
 
   controls.update();
 

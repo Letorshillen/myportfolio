@@ -1,11 +1,8 @@
 {
-  "name": "07_my_portfolio_new_parcel",
+  "name": "06_my_portfolio_webpack",
   "version": "1.0.0",
   "description": "",
   "main": "src.js",
-  "type": "module",
-
-  
   "scripts": {
     "build": "webpack --config ./bundler/webpack.prod.js",
     "dev": "webpack serve --config ./bundler/webpack.dev.js"
