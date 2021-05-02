@@ -1,10 +1,9 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import * as dat from "dat.gui";
-import testVertexShader from "./shaders/test/vertex.glsl";
-import testFragmentShader from "./shaders/test/fragment.glsl";
-import { Camera } from "three";
-
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
+import { sRGBEncoding } from "three";
 /**
  *  3D-Objects
  */
@@ -17,86 +16,66 @@ const gui = new dat.GUI();
 
 const hero__canvas = document.querySelector(".hero__canvas");
 const scene = new THREE.Scene();
-// scene.background = new THREE.Color(0x22160f);
+scene.background = new THREE.Color(0xc68c98);
+// scene.fog = new THREE.Fog(0x22160f, 5, 6);
 
 /**
- * Lights
+ * Loaders
  */
-// const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-// scene.add(ambientLight);
+// Texture loader
+const textureLoader = new THREE.TextureLoader();
 
-// const pointLight = new THREE.PointLight(0xffffff, 0.2, 100);
-// pointLight.position.set(2, 3, 7);
-// scene.add(pointLight);
+// Draco loader
+const dracoLoader = new DRACOLoader();
+dracoLoader.setDecoderPath("draco/");
 
-//Font loader
-const fontLoader = new THREE.FontLoader();
+// GLTF loader
+const gltfLoader = new GLTFLoader();
+gltfLoader.setDRACOLoader(dracoLoader);
 
 /**
  * Textures
  */
-const textureLoader = new THREE.TextureLoader();
+const bakedTexture = textureLoader.load("baked.jpg");
+bakedTexture.flipY = false;
+bakedTexture.encoding = THREE.sRGBEncoding;
 
 /**
- * Font
+ * Objects
  */
-fontLoader.load("/fonts/Dystopia_Regular.json", (font) => {
-  const textGeometry = new THREE.TextGeometry("ToM", {
-    font: font,
-    size: 1,
-    height: 0.1,
-    curveSegments: 6,
+gltfLoader.load("desk.glb", (gltf) => {
+  gltf.scene.traverse((child) => {
+    child.material = bakedMaterial;
   });
-  textGeometry.center();
 
-  const textMaterial = new THREE.MeshNormalMaterial();
+  const display1Mesh = gltf.scene.children.find(
+    (child) => child.name === "Screen1Display"
+  );
+  const display2Mesh = gltf.scene.children.find(
+    (child) => child.name === "Screen2Display"
+  );
+  const lightbulbMesh = gltf.scene.children.find(
+    (child) => child.name === "lightbulb"
+  );
+  const buttonMesh = gltf.scene.children.find(
+    (child) => child.name === "Buttonlight"
+  );
 
-  const text = new THREE.Mesh(textGeometry, textMaterial);
+  display1Mesh.material = displayLightMaterial;
+  display2Mesh.material = displayLightMaterial;
+  lightbulbMesh.material = lightbulbMaterial;
+  buttonMesh.material = buttonMaterial;
 
-  scene.add(text);
-
-  const textAnimation = () => {
-    const elapsedTime = clock.getElapsedTime();
-
-    // text.rotation.y = 0.1 * elapsedTime;
-    // text.rotation.x = 1 * elapsedTime;
-
-    window.requestAnimationFrame(textAnimation);
-  };
-
-  textAnimation();
+  scene.add(gltf.scene);
 });
 
 /**
- * Shader
+ * Material
  */
-const geometry = new THREE.PlaneGeometry(1, 1, 32, 32);
-
-const count = geometry.attributes.position.count;
-const randoms = new Float32Array(count);
-
-for (let i = 0; i < count; i++) {
-  randoms[i] = Math.random();
-}
-
-geometry.setAttribute("aRandom", new THREE.BufferAttribute(randoms, 1));
-
-// Material
-const material = new THREE.RawShaderMaterial({
-  vertexShader: testVertexShader,
-  fragmentShader: testFragmentShader,
-  side: THREE.DoubleSide,
-  transparent: true,
-  uniforms: {
-    uFrequenzy: { value: 5.0 },
-    uTime: { value: 0 },
-  },
-});
-
-// Mesh
-const mesh = new THREE.Mesh(geometry, material);
-mesh.rotation.x = Math.PI * 0.5;
-scene.add(mesh);
+const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture });
+const displayLightMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+const lightbulbMaterial = new THREE.MeshBasicMaterial({ color: 0xfffd74 });
+const buttonMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
 
 //sizes
 const sizes = {
@@ -122,8 +101,8 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   100
 );
-camera.position.x = 0;
-camera.position.y = 0;
+camera.position.x = 4;
+camera.position.y = 2;
 camera.position.z = 4;
 scene.add(camera);
 
@@ -131,15 +110,16 @@ scene.add(camera);
 const controls = new OrbitControls(camera, hero__canvas);
 controls.enableDamping = true;
 controls.maxDistance = 10;
-controls.minDistance = 1.5;
 
 //renderer
 
 const renderer = new THREE.WebGLRenderer({
   canvas: hero__canvas,
+  antialias: true,
 });
 
 renderer.setSize(sizes.width, sizes.height);
+renderer.outputEncoding = THREE.sRGBEncoding;
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 //animation
@@ -148,8 +128,6 @@ const clock = new THREE.Clock();
 
 const tick = () => {
   const elapsedTime = clock.getElapsedTime();
-
-  material.uniforms.uTime.value = elapsedTime;
 
   controls.update();
 
