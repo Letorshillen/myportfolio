@@ -16,7 +16,7 @@ const gui = new dat.GUI();
 
 const hero__canvas = document.querySelector(".hero__canvas");
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0xc68c98);
+scene.background = new THREE.Color(0xffb0c8);
 // scene.fog = new THREE.Fog(0x22160f, 5, 6);
 
 /**
@@ -36,17 +36,26 @@ gltfLoader.setDRACOLoader(dracoLoader);
 /**
  * Textures
  */
-const bakedTexture = textureLoader.load("baked.jpg");
-bakedTexture.flipY = false;
-bakedTexture.encoding = THREE.sRGBEncoding;
+const bakedFloorTexture = textureLoader.load("bakedFloor.jpg");
+bakedFloorTexture.flipY = false;
+bakedFloorTexture.encoding = THREE.sRGBEncoding;
+
+// const bakedDeskTexture = textureLoader.load("baked.jpg");
+// bakedDeskTexture.flipY = false;
+// bakedDeskTexture.encoding = THREE.sRGBEncoding;
 
 /**
  * Objects
  */
-gltfLoader.load("desk.glb", (gltf) => {
-  gltf.scene.traverse((child) => {
-    child.material = bakedMaterial;
-  });
+gltfLoader.load("full.glb", (gltf) => {
+  console.log(gltf);
+  const onFloorMesh = gltf.scene.children.find(
+    (child) => child.name === "onfloor"
+  );
+
+  const onDeskMesh = gltf.scene.children.find(
+    (child) => child.name === "ondesk"
+  );
 
   const display1Mesh = gltf.scene.children.find(
     (child) => child.name === "Screen1Display"
@@ -65,6 +74,8 @@ gltfLoader.load("desk.glb", (gltf) => {
   display2Mesh.material = displayLightMaterial;
   lightbulbMesh.material = lightbulbMaterial;
   buttonMesh.material = buttonMaterial;
+  onDeskMesh.material = bakedFloorMaterial;
+  onFloorMesh.material = bakedFloorMaterial;
 
   scene.add(gltf.scene);
 });
@@ -72,7 +83,13 @@ gltfLoader.load("desk.glb", (gltf) => {
 /**
  * Material
  */
-const bakedMaterial = new THREE.MeshBasicMaterial({ map: bakedTexture });
+const bakedFloorMaterial = new THREE.MeshBasicMaterial({
+  map: bakedFloorTexture,
+});
+// const bakedDeskMaterial = new THREE.MeshBasicMaterial({
+//   map: bakedDeskTexture,
+// });
+
 const displayLightMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
 const lightbulbMaterial = new THREE.MeshBasicMaterial({ color: 0xfffd74 });
 const buttonMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
@@ -101,9 +118,9 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   100
 );
-camera.position.x = 4;
+camera.position.x = -4;
 camera.position.y = 2;
-camera.position.z = 4;
+camera.position.z = -4;
 scene.add(camera);
 
 //controls
