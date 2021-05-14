@@ -5,8 +5,12 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import particelsVertexShader from "./shaders/particles/vertex.glsl";
 import particelsFragmentShader from "./shaders/particles/fragment.glsl";
-import displayVertexShader from "./shaders/display/vertex.glsl";
-import displayFragmentShader from "./shaders/display/fragment.glsl";
+import display1VertexShader from "./shaders/display1/vertex.glsl";
+import display1FragmentShader from "./shaders/display1/fragment.glsl";
+import display2VertexShader from "./shaders/display2/vertex.glsl";
+import display2FragmentShader from "./shaders/display2/fragment.glsl";
+import lpVertexShader from "./shaders/lp/vertex.glsl";
+import lpFragmentShader from "./shaders/lp/fragment.glsl";
 
 /**
  *  3D-Objects
@@ -71,15 +75,26 @@ gltfLoader.load("full.glb", (gltf) => {
   const buttonMesh = gltf.scene.children.find(
     (child) => child.name === "Buttonlight"
   );
+  const lpMesh = gltf.scene.children.find((child) => child.name === "lp");
 
-  display1Mesh.material = displayLightMaterial;
-  display2Mesh.material = displayLightMaterial;
+  display1Mesh.material = display1LightMaterial;
+  display2Mesh.material = display2LightMaterial;
   lightbulbMesh.material = lightbulbMaterial;
   buttonMesh.material = buttonMaterial;
   onDeskMesh.material = bakedDeskMaterial;
   onFloorMesh.material = bakedFloorMaterial;
+  lpMesh.material = lpMaterial;
 
   scene.add(gltf.scene);
+  const tick = () => {
+    const elapsedTime = clock.getElapsedTime();
+
+    lpMesh.rotation.y = elapsedTime * 1.5;
+
+    window.requestAnimationFrame(tick);
+  };
+
+  tick();
 });
 
 /**
@@ -95,12 +110,34 @@ const bakedDeskMaterial = new THREE.MeshBasicMaterial({
 const lightbulbMaterial = new THREE.MeshBasicMaterial({ color: 0xfffd74 });
 const buttonMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
 
-const displayLightMaterial = new THREE.ShaderMaterial({
+const display1LightMaterial = new THREE.ShaderMaterial({
   uniforms: {
     uTime: { value: 0 },
+    uColorStart: { value: new THREE.Color(0x000000) },
+    uColorEnd: { value: new THREE.Color(0xffb0c8) },
   },
-  vertexShader: displayVertexShader,
-  fragmentShader: displayFragmentShader,
+  vertexShader: display1VertexShader,
+  fragmentShader: display1FragmentShader,
+});
+
+const display2LightMaterial = new THREE.ShaderMaterial({
+  uniforms: {
+    uTime: { value: 0 },
+    uColorStart: { value: new THREE.Color(0x000000) },
+    uColorEnd: { value: new THREE.Color(0xffb0c8) },
+  },
+  vertexShader: display2VertexShader,
+  fragmentShader: display2FragmentShader,
+});
+
+const lpMaterial = new THREE.ShaderMaterial({
+  uniforms: {
+    uTime: { value: 0 },
+    uColorStart: { value: new THREE.Color(0xffffff) },
+    uColorEnd: { value: new THREE.Color(0x1c1b1b) },
+  },
+  vertexShader: lpVertexShader,
+  fragmentShader: lpFragmentShader,
 });
 
 /**
@@ -214,7 +251,9 @@ const tick = () => {
   const elapsedTime = clock.getElapsedTime();
 
   particlesMaterial.uniforms.uTime.value = elapsedTime;
-  displayLightMaterial.uniforms.uTime.value = elapsedTime;
+  display1LightMaterial.uniforms.uTime.value = elapsedTime;
+  display2LightMaterial.uniforms.uTime.value = elapsedTime;
+  lpMaterial.uniforms.uTime.value = elapsedTime;
 
   controls.update();
 

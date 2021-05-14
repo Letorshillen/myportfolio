@@ -77,6 +77,8 @@ float cnoise(vec3 P)
 
 uniform float uTime;
 varying vec2 vUv;
+uniform vec3 uColorStart;
+uniform vec3 uColorEnd;
 
 void main(){
 
@@ -84,10 +86,12 @@ void main(){
 
     float strength = cnoise(vec3(displacedUv * 4.0, uTime * 0.1));
 
-    float outerGlow = distance(vUv, vec2(0.3, 0.4)) *6.0 -1.4;
+    float outerGlow = distance(vUv, vec2(0.35, 0.25)) *8.0 - 0.5;
     strength += outerGlow;
 
     strength += step(- .2, strength) * 0.2;
 
-    gl_FragColor = vec4(strength, strength, strength, 1.0);
+    vec3 color = mix(uColorStart, uColorEnd, strength);
+
+    gl_FragColor = vec4(color, 1.0);
 }
