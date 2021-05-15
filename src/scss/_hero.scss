@@ -28,13 +28,6 @@
   text-decoration: none;
   color: $highlight-color;
   background: $primary-color;
-
-  &:hover,
-  &:focus {
-    outline: 0;
-    background: $gradient;
-    color: $primary-color;
-  }
 }
 
 .js__cta__hero {
@@ -49,13 +42,6 @@
   //     right: 50%;
   //     transform: translateX(50%);
   // }
-
-  &:hover,
-  &:focus {
-    outline: 0;
-    background: $gradient;
-    color: $primary-color;
-  }
 }
 
 .js__cta--scrolled {

@@ -1,120 +1,158 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tomtomtom</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
-</head>
-<body>
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header>
-        <nav>
-            <div class="js__nav__burger">
-                <div class="burger__line"></div>
-                <div class="burger__line"></div>
-                <div class="burger__line"></div>
-            </div>
-            <div class="js__nav__inner">
-                <a href="#hero" class="js__nav__link">home</a>
-                <div class="nav__line"></div>
-                <a href="#about" class="js__nav__link">about</a>
-                <div class="nav__line"></div>
-                <a href="#work" class="js__nav__link">work</a>
-                <div class="nav__line"></div>
-                <a href="#contact" class="js__nav__link">contact</a>
-            </div>
-        </nav>
+      <nav>
+        <div class="js__nav__burger">
+          <div class="burger__line"></div>
+          <div class="burger__line"></div>
+          <div class="burger__line"></div>
+        </div>
+        <div class="js__nav__inner">
+          <a href="#hero" class="js__nav__link">home</a>
+          <div class="nav__line"></div>
+          <a href="#about" class="js__nav__link">about</a>
+          <div class="nav__line"></div>
+          <a href="#work" class="js__nav__link">work</a>
+          <div class="nav__line"></div>
+          <a href="#contact" class="js__nav__link contact__nav">contact</a>
+        </div>
+      </nav>
     </header>
 
     <main>
-     <section id="hero" class="js__hero">
-         <!-- <div class="hero__wrapper">
+      <section id="hero" class="js__hero">
+        <!-- <div class="hero__wrapper">
              <h1 class="hero__h1">Placeholder <br>for crazy 3d object</h1>
          </div> -->
         <div class="hero__wrapper__cta">
-            <a href="mailto:stom.brehm@t-online.de" class="all__cta js__cta__hero">schreib mir</a>
-            <a href="#about" class="all__cta hero__cta">erfahre mehr</a>
+          <a href="mailto:stom.brehm@t-online.de" class="all__cta js__cta__hero"
+            >schreib mir</a
+          >
+          <a href="#about" class="all__cta hero__cta">erfahre mehr</a>
         </div>
         <canvas class="hero__canvas"></canvas>
-     </section>
+      </section>
 
-     <section id="about" class="about__section">
-         <div class="wrapper">
-            <h1 class="about__h1">about me</h1>
-            <div class="flex">
-                <div class="about__container">
-                    <h2 class="about__h2">this is me :( :)</h2>
-                    <img src="/static/images/potrait.jpg" alt="me" class="about__img">
-                    <p class="about__text">
-                        hey i like doing front-end-development.
-                        actually i am a graphic designer, but that sucks
-                        and i am wiriting code even though i have no idea what i am doing at all
-                        :^) :^) :^) :^) :^) :^) :^) :^) :^) :^) :^) :^) :^) :^) 
-                    </p>
-                </div>
-                <div class="skill__container">
-                    <div class="skill__content">
-                        <h3 class="skill__name skill__design">Design</h3>
-                        <div class="skill__line">
-                            <div class="item1__line item__line"></div>
-                        </div>
-                    </div>
-                    <div class="skill__content">
-                        <h3 class="skill__name skill__html">html</h3>
-                        <div class="skill__line">
-                            <div class="item2__line item__line"></div>
-                        </div>
-                    </div>
-                    <div class="skill__content">
-                        <h3 class="skill__name skill__css">CSS</h3>
-                        <div class="skill__line">
-                            <div class="item3__line item__line"></div>
-                        </div>
-                    </div>
-                    <div class="skill__content">
-                        <h3 class="skill__name skill__ae">After Effects</h3>
-                        <div class="skill__line">
-                            <div class="item4__line item__line"></div>
-                        </div>
-                    </div>
-                    <div class="skill__content">
-                        <h3 class="skill__name skill__js">JS</h3>
-                        <div class="skill__line">
-                            <div class="item5__line item__line"></div>
-                        </div>
-                    </div>
-                    <div class="skill__content">
-                        <h3 class="skill__name skill__video">Video</h3>
-                        <div class="skill__line">
-                            <div class="item6__line item__line"></div>
-                        </div>
-                    </div>
-                    <canvas class="skill__canvas"></canvas>
-                </div>
+      <section id="about" class="about__section">
+        <div class="wrapper">
+          <h1 class="about__h1">about me</h1>
+          <div class="flex">
+            <div class="about__container">
+              <h2 class="about__h2">this is me :( :)</h2>
+              <img
+                src="/static/images/potrait.jpg"
+                alt="me"
+                class="about__img"
+              />
+              <p class="about__text">
+                hey i like doing front-end-development. actually i am a graphic
+                designer, but that sucks and i am wiriting code even though i
+                have no idea what i am doing at all :^) :^) :^) :^) :^) :^) :^)
+                :^) :^) :^) :^) :^) :^) :^)
+              </p>
             </div>
-            <div class="about__icons">
-                <div class="icon__container">
-                    <svg version="1.1" class="icon__img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	                     viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
-                        <style type="text/css">
-                            .st0{fill:#F5AA42;}
-                            .st1{fill:#22160F;}
-                            .st2{display:none;}
-                            .st3{display:inline;fill:#22160F;}
-                        </style>
-                        <g class="alive">
-                            <g>
-                                <path class="st0" d="M190.38,200H9.62C4.31,200,0,195.69,0,190.38V9.62C0,4.31,4.31,0,9.62,0h180.76c5.31,0,9.62,4.31,9.62,9.62
-                                    v180.76C200,195.69,195.69,200,190.38,200z"/>
-                            </g>
-                            <g class="heart">
-                                <polygon class="st1" points="120.17,103.54 109.88,98.44 109.88,82.25 105.91,82.25 105.91,99.73 94.79,116.41 81.87,124.16 
+            <div class="skill__container">
+              <div class="skill__content">
+                <h3 class="skill__name skill__design">Design</h3>
+                <div class="skill__line">
+                  <div class="item1__line item__line"></div>
+                </div>
+              </div>
+              <div class="skill__content">
+                <h3 class="skill__name skill__html">html</h3>
+                <div class="skill__line">
+                  <div class="item2__line item__line"></div>
+                </div>
+              </div>
+              <div class="skill__content">
+                <h3 class="skill__name skill__css">CSS</h3>
+                <div class="skill__line">
+                  <div class="item3__line item__line"></div>
+                </div>
+              </div>
+              <div class="skill__content">
+                <h3 class="skill__name skill__ae">After Effects</h3>
+                <div class="skill__line">
+                  <div class="item4__line item__line"></div>
+                </div>
+              </div>
+              <div class="skill__content">
+                <h3 class="skill__name skill__js">JS</h3>
+                <div class="skill__line">
+                  <div class="item5__line item__line"></div>
+                </div>
+              </div>
+              <div class="skill__content">
+                <h3 class="skill__name skill__video">Video</h3>
+                <div class="skill__line">
+                  <div class="item6__line item__line"></div>
+                </div>
+              </div>
+              <canvas class="skill__canvas"></canvas>
+            </div>
+          </div>
+          <div class="about__icons">
+            <div class="icon__container">
+              <svg
+                version="1.1"
+                class="icon__img"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                viewBox="0 0 200 200"
+                style="enable-background: new 0 0 200 200"
+                xml:space="preserve"
+              >
+                <linearGradient id="my-cool-gradient" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#ffb0c8" />
+                  <stop offset="100%" stop-color="#3a75f0" />
+                </linearGradient>
+                <style type="text/css">
+                  .st0 {
+                    fill: url(#my-cool-gradient);
+                  }
+                  .st1 {
+                    fill: #ffffff;
+                  }
+                  .st2 {
+                    display: none;
+                  }
+                  .st3 {
+                    display: inline;
+                    fill: #ffffff;
+                  }
+                </style>
+                <g class="alive">
+                  <g>
+                    <path
+                      class="st0"
+                      d="M190.38,200H9.62C4.31,200,0,195.69,0,190.38V9.62C0,4.31,4.31,0,9.62,0h180.76c5.31,0,9.62,4.31,9.62,9.62
+                                    v180.76C200,195.69,195.69,200,190.38,200z"
+                    />
+                  </g>
+                  <g class="heart">
+                    <polygon
+                      class="st1"
+                      points="120.17,103.54 109.88,98.44 109.88,82.25 105.91,82.25 105.91,99.73 94.79,116.41 81.87,124.16 
                                     76.25,118.54 65.81,122.02 67.07,125.79 75.17,123.09 77.9,125.81 75.12,136.93 78.98,137.9 81.35,128.41 94.2,121.36 94.2,132.9 
                                     89.75,129.19 87.2,132.24 94.2,138.08 94.2,150.6 98.18,150.6 98.18,141.39 105.56,147.55 108.11,144.49 98.18,136.21 
-                                    98.18,118.25 108.9,102.39 115.89,105.83 113.16,119.47 117.06,120.26 119.36,108.76 125.88,115.28 128.68,112.47 		"/>
-                                <path class="st1" d="M157.76,65.09c-6.08-6.08-14.64-9.11-27.38-12.3c-4.72-1.18-18.23-2.22-30.36,1.97V40.3
+                                    98.18,118.25 108.9,102.39 115.89,105.83 113.16,119.47 117.06,120.26 119.36,108.76 125.88,115.28 128.68,112.47 		"
+                    />
+                    <path
+                      class="st1"
+                      d="M157.76,65.09c-6.08-6.08-14.64-9.11-27.38-12.3c-4.72-1.18-18.23-2.22-30.36,1.97V40.3
                                     c0-4.04-1.92-7.71-5.14-9.83c-2.8-1.85-5.81-2.72-9.01-2.59c-5.41,0.2-9.13,3.19-11.06,5.23c-1.02-1.83-2.15-3.37-3.36-4.58
                                     c-1.47-1.47-3.61-1.86-5.85-1.05c-2.03,0.72-3.82,2.25-4.97,3.4c-3.77,3.77-8.22,11.31-4.06,15.47
                                     c4.07,4.07,4.06,10.55,3.83,13.33c-3.42,2.77-18.67,16.18-20.51,36.71c-1.39,15.5,5.19,31.13,19.56,46.46
@@ -137,212 +175,279 @@
                                     c-0.08,0.42-0.34,0.79-0.7,1.03c-2.61,1.67-5.6,2.12-8.89,1.34c-1.6-0.38-3.15-1.14-4.6-2.24c-0.41-0.31-0.64-0.79-0.63-1.32
                                     c0.01-0.55,0.28-1.04,0.73-1.35c1.79-1.24,3.75-1.91,5.83-1.99C88.28,32.28,90.42,32.92,92.4,34.23z M62.02,64.21
                                     c2.43,2.77,7.65,6.89,15.51,12.23c-2.5,5.3-4.34,10.67-6.15,16.16c-1.33,4.02-3.15,9.53-4.23,10.25
-                                    c-6.6,4.4-19.73-0.72-22.93-2.07c-0.02-1.42,0.03-2.72,0.14-3.97C45.83,80.32,56.95,68.7,62.02,64.21z"/>
-                            </g>
-                        </g>
-                    </svg>
-                    <h3 class="icon__h3">lebendig</h3>
-                    <p class="text__icon">Lorem ipsum dolor sit amet 
-                        consectetur adipisicing elit. 
-                    </p>
-                </div>
-                <div class="icon__container">
-                    <svg version="1.1" class="icon__img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                         viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
-                        <style type="text/css">
-                            .st0{fill:#F5AA42;}
-                            .st1{fill:#22160F;}
-                            .st2{display:none;}
-                            .st3{display:inline;fill:#22160F;}
-                        </style>
-                        <g class="unique">
-                            <g>
-                                <path class="st0" d="M190.38,200H9.62C4.31,200,0,195.69,0,190.38V9.62C0,4.31,4.31,0,9.62,0h180.76c5.31,0,9.62,4.31,9.62,9.62
-                                    v180.76C200,195.69,195.69,200,190.38,200z"/>
-                            </g>
-                            <g class="fingerprint">
-                                <g>
-                                    <g>
-                                        <g>
-                                            <path class="st1" d="M129.35,38.27c-8.58-3.9-18.45-5.89-29.34-5.89c-10.97,0-20.85,1.98-29.35,5.89
+                                    c-6.6,4.4-19.73-0.72-22.93-2.07c-0.02-1.42,0.03-2.72,0.14-3.97C45.83,80.32,56.95,68.7,62.02,64.21z"
+                    />
+                  </g>
+                </g>
+              </svg>
+              <h3 class="icon__h3">lebendig</h3>
+              <p class="text__icon">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+            </div>
+            <div class="icon__container">
+              <svg
+                version="1.1"
+                class="icon__img"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                viewBox="0 0 200 200"
+                style="enable-background: new 0 0 200 200"
+                xml:space="preserve"
+              >
+                <g class="unique">
+                  <g>
+                    <path
+                      class="st0"
+                      d="M190.38,200H9.62C4.31,200,0,195.69,0,190.38V9.62C0,4.31,4.31,0,9.62,0h180.76c5.31,0,9.62,4.31,9.62,9.62
+                                    v180.76C200,195.69,195.69,200,190.38,200z"
+                    />
+                  </g>
+                  <g class="fingerprint">
+                    <g>
+                      <g>
+                        <g>
+                          <path
+                            class="st1"
+                            d="M129.35,38.27c-8.58-3.9-18.45-5.89-29.34-5.89c-10.97,0-20.85,1.98-29.35,5.89
                                                 c-1.41,0.65-2.03,2.32-1.38,3.74c0.65,1.41,2.32,2.03,3.74,1.38c7.76-3.57,16.85-5.38,26.99-5.38
                                                 c10.08,0,19.16,1.81,27.01,5.38c0.38,0.17,0.78,0.25,1.17,0.25c1.07,0,2.1-0.61,2.57-1.65
-                                                C131.39,40.59,130.76,38.92,129.35,38.27z"/>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g>
-                                    <g>
-                                        <g>
-                                            <path class="st1" d="M141.46,61.4c-11.42-11.61-25.76-17.74-41.46-17.74c-15.64,0-29.97,6.14-41.43,17.74
+                                                C131.39,40.59,130.76,38.92,129.35,38.27z"
+                          />
+                        </g>
+                      </g>
+                    </g>
+                    <g>
+                      <g>
+                        <g>
+                          <path
+                            class="st1"
+                            d="M141.46,61.4c-11.42-11.61-25.76-17.74-41.46-17.74c-15.64,0-29.97,6.14-41.43,17.74
                                                 c-1.09,1.11-1.08,2.9,0.02,3.99c1.11,1.09,2.89,1.08,3.98-0.02c10.38-10.51,23.32-16.07,37.42-16.07
                                                 c14.16,0,27.11,5.56,37.45,16.06c0.55,0.56,1.28,0.84,2.01,0.84c0.71,0,1.43-0.27,1.98-0.81
-                                                C142.53,64.29,142.55,62.51,141.46,61.4z"/>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g>
-                                    <g>
-                                        <g>
-                                            <path class="st1" d="M99.99,54.92c-4.02,0-8.01,0.5-11.86,1.48c-1.51,0.38-2.42,1.92-2.04,3.43c0.38,1.51,1.93,2.41,3.43,2.03
+                                                C142.53,64.29,142.55,62.51,141.46,61.4z"
+                          />
+                        </g>
+                      </g>
+                    </g>
+                    <g>
+                      <g>
+                        <g>
+                          <path
+                            class="st1"
+                            d="M99.99,54.92c-4.02,0-8.01,0.5-11.86,1.48c-1.51,0.38-2.42,1.92-2.04,3.43c0.38,1.51,1.93,2.41,3.43,2.03
                                                 c3.4-0.86,6.92-1.3,10.47-1.3c23.3,0,42.26,18.95,42.26,42.26c0,1.56,1.26,2.82,2.82,2.82c1.56,0,2.82-1.26,2.82-2.82
-                                                C147.89,76.41,126.4,54.92,99.99,54.92z"/>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g>
-                                    <g>
-                                        <g>
-                                            <path class="st1" d="M79.8,62.41c-0.78-1.34-2.5-1.79-3.85-1.01c-3.59,2.1-6.94,4.7-9.92,7.72
+                                                C147.89,76.41,126.4,54.92,99.99,54.92z"
+                          />
+                        </g>
+                      </g>
+                    </g>
+                    <g>
+                      <g>
+                        <g>
+                          <path
+                            class="st1"
+                            d="M79.8,62.41c-0.78-1.34-2.5-1.79-3.85-1.01c-3.59,2.1-6.94,4.7-9.92,7.72
                                                 c-8.77,8.87-13.71,20.82-13.92,33.66c-0.02,1.56,1.22,2.83,2.78,2.86c0.01,0,0.03,0,0.05,0c1.53,0,2.79-1.23,2.81-2.77
-                                                c0.18-11.38,4.54-21.96,12.29-29.79c2.64-2.67,5.58-4.96,8.76-6.81C80.13,65.48,80.58,63.75,79.8,62.41z"/>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g>
-                                    <g>
-                                        <g>
-                                            <path class="st1" d="M127.6,78.77c-6.98-8-17.04-12.58-27.61-12.58c-9.83,0-19.04,3.85-25.95,10.85
+                                                c0.18-11.38,4.54-21.96,12.29-29.79c2.64-2.67,5.58-4.96,8.76-6.81C80.13,65.48,80.58,63.75,79.8,62.41z"
+                          />
+                        </g>
+                      </g>
+                    </g>
+                    <g>
+                      <g>
+                        <g>
+                          <path
+                            class="st1"
+                            d="M127.6,78.77c-6.98-8-17.04-12.58-27.61-12.58c-9.83,0-19.04,3.85-25.95,10.85
                                                 c-6.89,6.95-10.67,16.36-10.67,26.62c0.02,6.06-1.88,13.33-5.27,20.31l-1.58,2.82c-0.76,1.36-0.28,3.07,1.08,3.84
                                                 c0.44,0.25,0.91,0.37,1.38,0.37c0.99,0,1.94-0.52,2.46-1.44l1.66-2.96c3.89-8.01,5.93-15.95,5.91-23.08
                                                 c0-8.63,3.21-16.62,9.04-22.51c5.85-5.92,13.64-9.17,21.95-9.17c8.94,0,17.46,3.88,23.36,10.65c1.02,1.17,2.81,1.29,3.98,0.27
-                                                C128.5,81.73,128.62,79.95,127.6,78.77z"/>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g>
-                                    <g>
-                                        <g>
-                                            <path class="st1" d="M141.86,135.29l-3.18-10.4c-1.79-8.15-1.94-15.93-2.03-20.59l-0.03-1.49c0-4.18-0.7-8.28-2.09-12.19
+                                                C128.5,81.73,128.62,79.95,127.6,78.77z"
+                          />
+                        </g>
+                      </g>
+                    </g>
+                    <g>
+                      <g>
+                        <g>
+                          <path
+                            class="st1"
+                            d="M141.86,135.29l-3.18-10.4c-1.79-8.15-1.94-15.93-2.03-20.59l-0.03-1.49c0-4.18-0.7-8.28-2.09-12.19
                                                 c-0.52-1.47-2.11-2.23-3.59-1.71c-1.47,0.52-2.23,2.12-1.71,3.59c1.17,3.31,1.76,6.78,1.76,10.38l0.03,1.53
                                                 c0.1,4.86,0.26,12.99,2.22,21.9l3.22,10.62c0.37,1.22,1.49,1.99,2.7,1.99c0.27,0,0.55-0.04,0.82-0.12
-                                                C141.47,138.35,142.31,136.79,141.86,135.29z"/>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g>
-                                    <g>
-                                        <g>
-                                            <path class="st1" d="M133.64,148.31l-2.62-8.39c-4.65-14.51-5.52-30.83-5.67-37.1c0-13.98-11.38-25.35-25.35-25.35
+                                                C141.47,138.35,142.31,136.79,141.86,135.29z"
+                          />
+                        </g>
+                      </g>
+                    </g>
+                    <g>
+                      <g>
+                        <g>
+                          <path
+                            class="st1"
+                            d="M133.64,148.31l-2.62-8.39c-4.65-14.51-5.52-30.83-5.67-37.1c0-13.98-11.38-25.35-25.35-25.35
                                                 s-25.35,11.55-25.35,25.85c0.01,2.96-0.54,18.62-12.44,35.78c-0.89,1.28-0.57,3.04,0.7,3.92c1.27,0.88,3.04,0.57,3.92-0.7
                                                 c12.54-18.08,13.46-34.44,13.44-39.09c0-11.09,8.85-20.11,19.71-20.11c10.87,0,19.72,8.85,19.72,19.79
                                                 c0.2,8.18,1.25,24.09,5.93,38.74l2.6,8.36c0.38,1.21,1.49,1.98,2.69,1.98c0.28,0,0.56-0.04,0.84-0.12
-                                                C133.27,151.37,134.1,149.79,133.64,148.31z"/>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g>
-                                    <g>
-                                        <g>
-                                            <path class="st1" d="M114.08,102.82c0-7.76-6.32-14.09-14.09-14.09s-14.09,6.32-14.09,14.19c0.03,0.93,0.66,23.06-17.24,46.35
+                                                C133.27,151.37,134.1,149.79,133.64,148.31z"
+                          />
+                        </g>
+                      </g>
+                    </g>
+                    <g>
+                      <g>
+                        <g>
+                          <path
+                            class="st1"
+                            d="M114.08,102.82c0-7.76-6.32-14.09-14.09-14.09s-14.09,6.32-14.09,14.19c0.03,0.93,0.66,23.06-17.24,46.35
                                                 c-0.95,1.23-0.72,3,0.52,3.95c1.24,0.95,3,0.71,3.95-0.52c19.12-24.88,18.43-48.98,18.4-49.89c0-4.66,3.79-8.45,8.45-8.45
                                                 s8.45,3.79,8.46,8.51c0.08,3.16,0.1,31.62-21.9,60.2c-0.95,1.23-0.72,3,0.51,3.95c0.52,0.39,1.12,0.59,1.72,0.59
-                                                c0.85,0,1.68-0.38,2.23-1.1C114.23,136.36,114.16,106.1,114.08,102.82z"/>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g>
-                                    <g>
-                                        <g>
-                                            <path class="st1" d="M102.8,102.69c-0.07-1.55-1.29-2.78-2.94-2.69c-1.55,0.07-2.76,1.38-2.69,2.94
+                                                c0.85,0,1.68-0.38,2.23-1.1C114.23,136.36,114.16,106.1,114.08,102.82z"
+                          />
+                        </g>
+                      </g>
+                    </g>
+                    <g>
+                      <g>
+                        <g>
+                          <path
+                            class="st1"
+                            d="M102.8,102.69c-0.07-1.55-1.29-2.78-2.94-2.69c-1.55,0.07-2.76,1.38-2.69,2.94
                                                 c0,0.04,0.16,4.16-0.89,10.68c-0.24,1.54,0.81,2.99,2.34,3.23c0.15,0.02,0.3,0.03,0.45,0.03c1.36,0,2.56-0.99,2.78-2.37
-                                                C103,107.38,102.81,102.88,102.8,102.69z"/>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g>
-                                    <g>
-                                        <g>
-                                            <path class="st1" d="M97.27,122.73c-1.5-0.45-3.06,0.41-3.5,1.9c-3.52,11.89-9.38,23.02-17.4,33.07
+                                                C103,107.38,102.81,102.88,102.8,102.69z"
+                          />
+                        </g>
+                      </g>
+                    </g>
+                    <g>
+                      <g>
+                        <g>
+                          <path
+                            class="st1"
+                            d="M97.27,122.73c-1.5-0.45-3.06,0.41-3.5,1.9c-3.52,11.89-9.38,23.02-17.4,33.07
                                                 c-0.97,1.22-0.77,2.99,0.45,3.96c0.52,0.42,1.14,0.61,1.76,0.61c0.83,0,1.65-0.36,2.2-1.06c8.48-10.62,14.67-22.39,18.41-34.98
-                                                C99.62,124.75,98.77,123.17,97.27,122.73z"/>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g>
-                                    <g>
-                                        <g>
-                                            <path class="st1" d="M124.58,156.49l-3.4-10.79c-1.35-4.05-2.61-8.32-2.62-8.34c-0.34-1.14-1.35-1.95-2.54-2.02
+                                                C99.62,124.75,98.77,123.17,97.27,122.73z"
+                          />
+                        </g>
+                      </g>
+                    </g>
+                    <g>
+                      <g>
+                        <g>
+                          <path
+                            class="st1"
+                            d="M124.58,156.49l-3.4-10.79c-1.35-4.05-2.61-8.32-2.62-8.34c-0.34-1.14-1.35-1.95-2.54-2.02
                                                 c-1.22-0.08-2.29,0.61-2.76,1.71c-0.06,0.15-6.34,14.9-13.53,26.23c-0.83,1.31-0.45,3.05,0.87,3.89
                                                 c0.47,0.3,0.99,0.44,1.51,0.44c0.94,0,1.84-0.46,2.38-1.31c4.36-6.86,8.31-14.74,10.89-20.22c0.15,0.45,0.3,0.91,0.45,1.36
-                                                l3.38,10.74c0.47,1.48,2.03,2.32,3.53,1.84C124.22,159.56,125.05,157.98,124.58,156.49z"/>
-                                        </g>
-                                    </g>
-                                </g>
-                            </g>
-                            <g class="scan">
-                            <rect x="38" y="10" class="st0" width="129" height="168"/>
-                            </g>
-                            <g class="scan__line">
-                                <rect x="31.5" y="173" class="st1" width="137" height="7"/>
-                            </g>
+                                                l3.38,10.74c0.47,1.48,2.03,2.32,3.53,1.84C124.22,159.56,125.05,157.98,124.58,156.49z"
+                          />
+                        </g>
+                      </g>
                     </g>
-                    </svg>
-                    
-                    <h3 class="icon__h3">unique</h3>
-                    <p class="text__icon">Lorem ipsum dolor sit amet 
-                        consectetur adipisicing elit. 
-                    </p>
-                </div>
-                <div class="icon__container">
-                    <svg version="1.1" class="icon__img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                        viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
-                        <style type="text/css">
-                            .st0{fill:#F5AA42;}
-                            .st1{fill:#22160F;}
-                            .st2{display:none;}
-                            .st3{display:inline;fill:#22160F;}
-                        </style>
-                        <g class="responsive">
-                            <g>
-                                <path class="st0" d="M190.38,200H9.62C4.31,200,0,195.69,0,190.38V9.62C0,4.31,4.31,0,9.62,0h180.76c5.31,0,9.62,4.31,9.62,9.62
-                                    v180.76C200,195.69,195.69,200,190.38,200z"/>
-                            </g>
-                            <g class="mobile">
-                                <path class="st1" d="M130.97,20H69.03c-7.12,0.01-12.9,5.78-12.9,12.9V167.1c0,0.05,0,0.1,0,0.16c-0.04,1.5,0.23,3.01,0.79,4.29
+                  </g>
+                  <g class="scan">
+                    <path
+                      class="st0"
+                      d="M190.38,200H9.62C4.31,200,0,195.69,0,190.38V9.62C0,4.31,4.31,0,9.62,0h180.76c5.31,0,9.62,4.31,9.62,9.62
+                                v180.76C200,195.69,195.69,200,190.38,200z"
+                    />
+                  </g>
+                  <g class="scan__line">
+                    <rect x="31.5" y="173" class="st1" width="137" height="7" />
+                  </g>
+                </g>
+              </svg>
+
+              <h3 class="icon__h3">unique</h3>
+              <p class="text__icon">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+            </div>
+            <div class="icon__container">
+              <svg
+                version="1.1"
+                class="icon__img"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                viewBox="0 0 200 200"
+                style="enable-background: new 0 0 200 200"
+                xml:space="preserve"
+              >
+                <g class="responsive">
+                  <g>
+                    <path
+                      class="st0"
+                      d="M190.38,200H9.62C4.31,200,0,195.69,0,190.38V9.62C0,4.31,4.31,0,9.62,0h180.76c5.31,0,9.62,4.31,9.62,9.62
+                                    v180.76C200,195.69,195.69,200,190.38,200z"
+                    />
+                  </g>
+                  <g class="mobile">
+                    <path
+                      class="st1"
+                      d="M130.97,20H69.03c-7.12,0.01-12.9,5.78-12.9,12.9V167.1c0,0.05,0,0.1,0,0.16c-0.04,1.5,0.23,3.01,0.79,4.29
                                     c1.81,4.93,6.55,8.45,12.11,8.46h61.94c5.56-0.01,10.3-3.53,12.11-8.46c0.56-1.28,0.82-2.79,0.79-4.29c0-0.05,0-0.1,0-0.16V32.9
                                     C143.86,25.78,138.09,20.01,130.97,20z M85.54,25.16h28.92c1.57,0,2.75,1.44,2.44,2.98l-0.55,2.76c-0.23,1.16-1.25,2-2.44,2H86.09
                                     c-1.19,0-2.21-0.84-2.44-2l-0.55-2.76C82.79,26.6,83.97,25.16,85.54,25.16z M100,175.48c-3.25,0-5.88-2.63-5.88-5.88
                                     s2.63-5.88,5.88-5.88s5.88,2.63,5.88,5.88S103.25,175.48,100,175.48z M138.71,160.22c-0.05,0-0.11-0.01-0.16-0.01h-77.1
-                                    c-0.05,0-0.11,0-0.16,0.01V38.15c0.48,0.19,1.01,0.29,1.58,0.29h74.16c0.62,0,1.17-0.12,1.68-0.33V160.22z"/>
-                            </g>
-                            <g class="desktop" class="st2">
-                                <path class="st3" d="M176.5,28.91h-153c-5.37,0.01-9.73,4.36-9.74,9.74v102.93c0.01,5.37,4.36,9.73,9.74,9.74h66.25v12.05h-15.3
+                                    c-0.05,0-0.11,0-0.16,0.01V38.15c0.48,0.19,1.01,0.29,1.58,0.29h74.16c0.62,0,1.17-0.12,1.68-0.33V160.22z"
+                    />
+                  </g>
+                  <g class="desktop" class="st2">
+                    <path
+                      class="st3"
+                      d="M176.5,28.91h-153c-5.37,0.01-9.73,4.36-9.74,9.74v102.93c0.01,5.37,4.36,9.73,9.74,9.74h66.25v12.05h-15.3
                                     c-1.19,0-2.16,0.97-2.16,2.16v3.4c0,1.19,0.97,2.16,2.16,2.16h51.1c1.19,0,2.16-0.97,2.16-2.16v-3.4c0-1.19-0.97-2.16-2.16-2.16
                                     h-15.3v-12.05h66.25c5.37-0.01,9.73-4.36,9.74-9.74V38.65C186.23,33.27,181.87,28.92,176.5,28.91z M102.78,145.07h-5.56
                                     c-1.54,0-2.78-1.25-2.78-2.78c0-1.54,1.25-2.78,2.78-2.78h5.56c1.54,0,2.78,1.25,2.78,2.78
                                     C105.56,143.82,104.32,145.07,102.78,145.07z M105.51,163.36H94.49v-12.05h11.02V163.36z M180.67,135.79H19.33V38.65
-                                    c0-2.3,1.87-4.17,4.17-4.17h153c2.3,0,4.17,1.87,4.17,4.17V135.79z"/>
-                            </g>
-                        </g>
-                        </svg>
-                    <h3 class="icon__h3">responsive</h3>
-                    <p class="text__icon">Lorem ipsum dolor sit amet 
-                        consectetur adipisicing elit. 
-                    </p>
-                </div>
-                <div class="icon__container">
-                    <svg version="1.1" class="icon__img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                        viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
-                        <style type="text/css">
-                            .st0{fill:#F5AA42;}
-                            .st1{fill:#22160F;}
-                            .st2{display:none;}
-                            .st3{display:inline;fill:#22160F;}
-                        </style>
-                        <g class="modern">
-                            <g>
-                                <path class="st0" d="M190.38,200H9.62C4.31,200,0,195.69,0,190.38V9.62C0,4.31,4.31,0,9.62,0h180.76c5.31,0,9.62,4.31,9.62,9.62
-                                    v180.76C200,195.69,195.69,200,190.38,200z"/>
-                            </g>
-                            <g class="react">
-                                <g>
-                                    <path class="st1" d="M100,87.3c-7.01,0-12.7,5.69-12.7,12.7s5.69,12.7,12.7,12.7c7.01,0,12.7-5.69,12.7-12.7
+                                    c0-2.3,1.87-4.17,4.17-4.17h153c2.3,0,4.17,1.87,4.17,4.17V135.79z"
+                    />
+                  </g>
+                </g>
+              </svg>
+              <h3 class="icon__h3">responsive</h3>
+              <p class="text__icon">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+            </div>
+            <div class="icon__container">
+              <svg
+                version="1.1"
+                class="icon__img"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                viewBox="0 0 200 200"
+                style="enable-background: new 0 0 200 200"
+                xml:space="preserve"
+              >
+                <g class="modern">
+                  <g>
+                    <path
+                      class="st0"
+                      d="M190.38,200H9.62C4.31,200,0,195.69,0,190.38V9.62C0,4.31,4.31,0,9.62,0h180.76c5.31,0,9.62,4.31,9.62,9.62
+                                    v180.76C200,195.69,195.69,200,190.38,200z"
+                    />
+                  </g>
+                  <g class="react">
+                    <g>
+                      <path
+                        class="st1"
+                        d="M100,87.3c-7.01,0-12.7,5.69-12.7,12.7s5.69,12.7,12.7,12.7c7.01,0,12.7-5.69,12.7-12.7
                                         C112.69,92.99,107.01,87.31,100,87.3z M100,107.62c-4.21,0-7.62-3.41-7.62-7.62s3.41-7.62,7.62-7.62c4.21,0,7.62,3.41,7.62,7.62
-                                        S104.2,107.62,100,107.62z"/>
-                                </g>
-                                <g>
-                                    <path class="st1" d="M144.19,100c3.82-3.23,7.44-6.67,10.86-10.32c10.86-11.75,14.64-21.36,10.94-27.78
+                                        S104.2,107.62,100,107.62z"
+                      />
+                    </g>
+                    <g>
+                      <path
+                        class="st1"
+                        d="M144.19,100c3.82-3.23,7.44-6.67,10.86-10.32c10.86-11.75,14.64-21.36,10.94-27.78
                                         c-5.33-9.23-23.25-7.51-43.88-0.18c-3.97-21.54-11.45-37.91-22.1-37.91c-10.65,0-18.13,16.38-22.09,37.92
                                         c-20.64-7.33-38.56-9.05-43.88,0.18c-3.71,6.42,0.07,16.03,10.94,27.78c3.42,3.64,7.04,7.09,10.85,10.32
                                         c-3.82,3.23-7.44,6.67-10.86,10.32c-10.85,11.75-14.64,21.36-10.93,27.78c2.54,4.4,7.95,6.32,15.16,6.32
@@ -368,66 +473,71 @@
                                         c4.69,3.77,9.8,7.51,15.28,11.13c0.4,6.43,1.07,12.76,1.99,18.79C56.57,140.56,41.65,141.14,38.41,135.55z M100,171.11
                                         c-6.46,0-13.42-13.22-17.27-34.62c5.68-2.21,11.51-4.8,17.28-7.67c5.77,2.87,11.6,5.46,17.28,7.67
                                         C113.41,157.88,106.46,171.11,100,171.11z M161.58,135.55c-3.23,5.59-18.16,5.01-38.63-2.35c0.93-6.02,1.59-12.36,1.99-18.79
-                                        c5.48-3.62,10.59-7.36,15.28-11.13c3.91,3.27,7.61,6.76,11.1,10.47C160.12,123.29,163.96,131.43,161.58,135.55z"/>
-                                </g>
-                            </g>
-                        </g>
-                    </svg>
-                    <h3 class="icon__h3">mordern</h3>
-                    <p class="text__icon">Lorem ipsum dolor sit amet 
-                        consectetur adipisicing elit. 
-                    </p>
-                </div>
+                                        c5.48-3.62,10.59-7.36,15.28-11.13c3.91,3.27,7.61,6.76,11.1,10.47C160.12,123.29,163.96,131.43,161.58,135.55z"
+                      />
+                    </g>
+                  </g>
+                </g>
+              </svg>
+              <h3 class="icon__h3">mordern</h3>
+              <p class="text__icon">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
             </div>
+          </div>
         </div>
-        </section>
+      </section>
 
-        <section id="work" class="work__section">
-            <div class="wrapper">
-                <h1 class="work__h1">work</h1>
-                <div class="work__container flex">
-                    
-                    <div class="work__item work__item1">
-                        <div class="work__item__inner">
-                            <h2 class="work__h2">Shop</h3>
-                            <p class="work__text">hihih/id did this</p>
-                            <a href="#work" class="all__cta work__cta">look at</a>
-                        </div>
-                    </div>
-
-                    <div class="work__item work__item2">
-                        <div class="work__item__inner">
-                            <h2 class="work__h2">Shop</h3>
-                            <p class="work__text">hihih/id did this</p>
-                            <a href="#work" class="all__cta work__cta">look at</a>
-                        </div>
-                    </div>
-                </div>
+      <section id="work" class="work__section">
+        <div class="wrapper">
+          <h1 class="work__h1">work</h1>
+          <div class="work__container flex">
+            <div class="work__item work__item1">
+              <div class="work__item__inner">
+                <h2 class="work__h2">Shop</h2>
+                <p class="work__text">hihih/id did this</p>
+                <a href="#work" class="all__cta work__cta">look at</a>
+              </div>
             </div>
-        </section>
 
-        <section id="contact" class="contact__section">
-            <div class="wrapper">
-                <h1 class="contact__h1">contact</h1>
-                <div class="contact__container">
-                    <p class="contact__text">Lorem ipsum 
-                        dolor sit amet consectetur adipisicing elit. 
-                        Quod animi dolores fugiat beatae ad quia adipisci 
-                        sed minus esse laborum iure, voluptatem modi inventore 
-                        repudiandae quidem et officia, corporis unde?
-                    </p>
-                    <a href="mailto:stom.brehm@t-online.de" class="all__cta contact__cta">schreib mir</a>
-                </div>
+            <div class="work__item work__item2">
+              <div class="work__item__inner">
+                <h2 class="work__h2">Shop</h2>
+                <p class="work__text">hihih/id did this</p>
+                <a href="#work" class="all__cta work__cta">look at</a>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
+      <section id="contact" class="contact__section">
+        <div class="wrapper">
+          <h1 class="contact__h1">contact</h1>
+          <div class="contact__container">
+            <p class="contact__text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+              animi dolores fugiat beatae ad quia adipisci sed minus esse
+              laborum iure, voluptatem modi inventore repudiandae quidem et
+              officia, corporis unde?
+            </p>
+            <a
+              href="mailto:stom.brehm@t-online.de"
+              class="all__cta contact__cta"
+              >schreib mir</a
+            >
+          </div>
+        </div>
+      </section>
     </main>
-    
+
     <footer class="">
-       <a href="https://github.com/Letorshillen" class="footer__link">&copy Tom Brehm</a> 
+      <a href="https://github.com/Letorshillen" class="footer__link"
+        >&copy Tom Brehm</a
+      >
     </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>    
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
+  </body>
 </html>

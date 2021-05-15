@@ -153,6 +153,7 @@ tl__icons.to(".heart", {
 });
 
 tl__icons.to(".scan", {
+  opacity: 0,
   duration: 1,
   y: -150,
 });
