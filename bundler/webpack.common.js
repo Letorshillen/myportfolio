@@ -35,10 +35,10 @@ module.exports = {
         use: ["babel-loader"],
       },
 
-      // CSS
+      // SCSS
       {
-        test: /\.css$/,
-        use: [MiniCSSExtractPlugin.loader, "css-loader"],
+        test: /\.s[ac]ss$/i,
+        use: [MiniCSSExtractPlugin.loader, "css-loader", "sass-loader"],
       },
 
       // Images

@@ -43,7 +43,7 @@ gltfLoader.setDRACOLoader(dracoLoader);
 /**
  * Textures
  */
-const bakedFloorTexture = textureLoader.load("bakedFloor.jpg");
+const bakedFloorTexture = textureLoader.load("bakedFloorEdit.jpg");
 bakedFloorTexture.flipY = false;
 bakedFloorTexture.encoding = THREE.sRGBEncoding;
 
@@ -226,7 +226,13 @@ scene.add(camera);
 //controls
 const controls = new OrbitControls(camera, hero__canvas);
 controls.enableDamping = true;
-controls.maxDistance = 10;
+controls.rotateSpeed = 0.5;
+controls.maxDistance = 5;
+controls.minDistance = 2;
+controls.maxPolarAngle = Math.PI * 0.45;
+controls.minPolarAngle = Math.PI * 0.2;
+controls.maxAzimuthAngle = -Math.PI * 0.5;
+controls.minAzimuthAngle = Math.PI;
 
 /**
  * renderer

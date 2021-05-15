@@ -9,22 +9,6 @@
   overflow-x: hidden;
 }
 
-// .hero__wrapper{
-//     height: 100%;
-//     display: flex;
-//     align-items: center;
-// }
-
-// .hero__h1{
-//     font-size: 40px;
-//     text-align: left;
-//     margin: 0 50px;
-
-//     @include mobile{
-//         font-size: 60px;
-//     }
-// }
-
 .hero__wrapper__cta {
   z-index: 99;
   position: absolute;
@@ -42,14 +26,14 @@
 .hero__cta {
   transition: all 0.5s ease-out;
   text-decoration: none;
-  color: $primary-color;
-  background-color: $highlight-color;
+  color: $highlight-color;
+  background: $primary-color;
 
   &:hover,
   &:focus {
     outline: 0;
-    background-color: $primary-color;
-    color: $highlight-color;
+    background: $gradient;
+    color: $primary-color;
   }
 }
 
@@ -69,7 +53,7 @@
   &:hover,
   &:focus {
     outline: 0;
-    background-color: $highlight-color2;
+    background: $gradient;
     color: $primary-color;
   }
 }
@@ -79,7 +63,7 @@
   outline: 0;
   width: 60px;
   height: 60px;
-  background: url("../../static/images/email.svg"), $highlight-color2;
+  background: url("../../static/images/email.svg"), $primary-color;
   background-size: 60%;
   background-position: center;
   background-repeat: no-repeat;
@@ -93,7 +77,10 @@
   &:hover,
   &:focus {
     outline: 0;
-    background-color: $highlight-color;
+    background: url("../../static/images/email.svg"), $highlight-color;
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
 

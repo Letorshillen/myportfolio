@@ -1,20 +1,29 @@
-$primary-color:  #22160f;
-$highlight-color: #f5aa42;
-$highlight-color2: #c6c1bd;
+$primary-color: #141414;
+$highlight-color: #ffb0c8;
+$highlight-color2: #c6c1b2;
 
+$gradient: linear-gradient(135deg, #09e485 0%, #0291e3 100%);
 
 @mixin mobile {
-    @media (min-width: 480px) { @content; }
+  @media (min-width: 480px) {
+    @content;
   }
+}
 
-@mixin tablet{
-    @media (min-width: 768px) { @content; }
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
   }
+}
 
 @mixin desktop {
-    @media (min-width: 1200px) { @content; }
+  @media (min-width: 1200px) {
+    @content;
   }
+}
 
 @mixin big-desktop {
-    @media (min-width: 1600px) { @content; }
+  @media (min-width: 1600px) {
+    @content;
   }
+}
