@@ -7,10 +7,15 @@
   display: flex;
   justify-content: center;
   overflow-x: hidden;
+  cursor: grab;
+}
+
+.js__hero:active {
+  cursor: grabbing;
 }
 
 .hero__wrapper__cta {
-  z-index: 99;
+  z-index: 97;
   position: absolute;
   bottom: 10%;
   display: flex;
@@ -23,20 +28,10 @@
   }
 }
 
-.hero__cta {
-  transition: all 0.5s ease-out;
-  text-decoration: none;
-  color: $highlight-color;
-  background: $primary-color;
-}
-
 .js__cta__hero {
   bottom: 30%;
   right: 30%;
   transition: all 0.5s ease-out;
-  text-decoration: none;
-  background-color: $highlight-color;
-  color: $primary-color;
 
   // @include mobile{
   //     right: 50%;

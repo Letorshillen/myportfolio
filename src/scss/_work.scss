@@ -61,4 +61,102 @@
   color: $primary-color;
   background-color: $highlight-color;
   transform: translate3d(200vw, 0, 0);
+  border: 0;
+  font-family: inherit;
+  height: 40px;
+  cursor: pointer;
+}
+
+.work__modal__wrapper {
+  visibility: visible;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  top: 0;
+  left: 0;
+  z-index: 98;
+  background: rgba($primary-color, 0.5);
+}
+
+.work__modal {
+  opacity: 0;
+  position: relative;
+  width: 0vw;
+  height: 0vh;
+  background: white;
+  transition: all 0.3s ease-in;
+  border-radius: 0.5%;
+}
+
+.work__modal__active {
+  width: 80vw;
+  height: 80vh;
+  opacity: 1;
+  @include big-desktop {
+    width: 50vw;
+  }
+}
+
+.work__modal__close {
+  position: absolute;
+  right: 0;
+  margin: 10px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 10;
+
+  &::after,
+  &::before {
+    position: absolute;
+    content: "";
+    left: 15px;
+    width: 2px;
+    height: 25px;
+    transition: all 0.3s ease-in;
+    background: $primary-color;
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
+  &::before {
+    transform: rotate(-45deg);
+  }
+
+  &:hover::after,
+  &:hover::before {
+    background: $gradient;
+    transform: rotate(90deg);
+  }
+}
+
+.work__modal__inner {
+  position: relative;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.work__modal__inner::-webkit-scrollbar {
+  display: none;
+}
+
+.work__modal__slider {
+  background: red;
+  width: 100%;
+  height: 200px;
+}
+
+.work__modal__text {
+  margin: 0 20px;
+}
+
+.work__modal__cta {
+  margin: 20px;
 }

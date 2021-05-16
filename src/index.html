@@ -50,11 +50,7 @@
           <div class="flex">
             <div class="about__container">
               <h2 class="about__h2">this is me :( :)</h2>
-              <img
-                src="/static/images/potrait.jpg"
-                alt="me"
-                class="about__img"
-              />
+              <img alt="me" class="about__img" />
               <p class="about__text">
                 hey i like doing front-end-development. actually i am a graphic
                 designer, but that sucks and i am wiriting code even though i
@@ -491,12 +487,42 @@
       <section id="work" class="work__section">
         <div class="wrapper">
           <h1 class="work__h1">work</h1>
+          <div class="work__modal__wrapper">
+            <div class="work__modal work__modal1 work__modal__active">
+              <div class="work__modal__close work__modal__close1"></div>
+              <div class="work__modal__inner">
+                <canvas class="work__modal__slider"></canvas>
+                <h2 class="work__modal__h2">Schedule-App</h2>
+                <p class="work__modal__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem
+                  ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum
+                  dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor
+                  sit amet consectetur adipisicing elit.Lorem ipsum dolor sit
+                  amet consectetur adipisicing elit.Lorem ipsum dolor sit amet
+                  consectetur adipisicing elit.
+                </p>
+                <a
+                  href="https://github.com/Letorshillen/schedule-app"
+                  target="_blank"
+                  class="all__cta work__modal__cta"
+                  >Zu GitHub</a
+                >
+                <a
+                  href="https://flamboyant-lamport-72974b.netlify.app/"
+                  target="_blank"
+                  class="all__cta work__modal__cta"
+                  >Zur Webapp</a
+                >
+              </div>
+            </div>
+          </div>
+
           <div class="work__container flex">
             <div class="work__item work__item1">
               <div class="work__item__inner">
                 <h2 class="work__h2">Shop</h2>
                 <p class="work__text">hihih/id did this</p>
-                <a href="#work" class="all__cta work__cta">look at</a>
+                <button class="all__cta work__cta work__cta1">look at</button>
               </div>
             </div>
 
@@ -504,7 +530,7 @@
               <div class="work__item__inner">
                 <h2 class="work__h2">Shop</h2>
                 <p class="work__text">hihih/id did this</p>
-                <a href="#work" class="all__cta work__cta">look at</a>
+                <button class="all__cta work__cta">look at</button>
               </div>
             </div>
           </div>

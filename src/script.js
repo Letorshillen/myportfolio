@@ -1,6 +1,10 @@
 import "./scss/style.scss";
 import "./three.js";
+import "./slider1.js";
+import img from "../static/images/potrait.jpg";
 
+const aboutImg = document.querySelector(".about__img");
+aboutImg.src = img;
 /**
  * Nav
  */
@@ -63,6 +67,24 @@ const sectionObserver = new IntersectionObserver(function (
 sectionOneOptions);
 
 sectionObserver.observe(section__hero);
+
+/**
+ * Work modals close & open
+ */
+const modal__wrapper = document.querySelector(".work__modal__wrapper");
+const modal1 = document.querySelector(".work__modal1");
+const modal1__close = document.querySelector(".work__modal__close1");
+const modal1__cta = document.querySelector(".work__cta1");
+
+modal1__cta.addEventListener("click", () => {
+  modal1.classList.add("work__modal__active");
+  modal__wrapper.style.visibility = "visible";
+});
+
+modal1__close.addEventListener("click", () => {
+  modal1.classList.remove("work__modal__active");
+  modal__wrapper.style.visibility = "hidden";
+});
 
 /**
  * scroll-animations
