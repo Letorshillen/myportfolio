@@ -87,7 +87,8 @@
   height: 0vh;
   background: white;
   transition: all 0.3s ease-in;
-  border-radius: 0.5%;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .work__modal__active {
@@ -141,6 +142,8 @@
   justify-content: center;
   height: 100%;
   overflow-y: scroll;
+  -ms-overflow-style: none; /* IE 11 */
+  scrollbar-width: none; /* Firefox 64 */
 }
 
 .work__modal__inner::-webkit-scrollbar {
@@ -159,4 +162,49 @@
 
 .work__modal__cta {
   margin: 20px;
+}
+
+.work__icons {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include tablet {
+    flex-direction: row;
+  }
+
+  @include desktop {
+    margin-top: 70px;
+  }
+}
+
+.icon__container {
+  margin: 30px;
+  text-align: center;
+}
+
+.icon__img {
+  overflow: hidden;
+  width: 50%;
+
+  @include mobile {
+    width: 30%;
+  }
+
+  @include tablet {
+    width: 70%;
+  }
+
+  @include desktop {
+    width: 60%;
+  }
+}
+
+.desktop {
+  opacity: 0;
+}
+
+.icon__h3 {
+  margin: 15px 0;
 }

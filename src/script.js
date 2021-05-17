@@ -69,6 +69,32 @@ sectionOneOptions);
 sectionObserver.observe(section__hero);
 
 /**
+ * about life events
+ */
+
+const life = document.querySelectorAll(".about__life");
+const life1 = document.querySelector(".about__life1");
+
+life.forEach((item) => {
+  item.addEventListener("click", () => {
+    life.forEach((item) => {
+      item.classList.remove("about__life__active");
+      item.classList.add("about__life__inactive");
+    });
+    if (item.classList.contains("about__life__inactive")) {
+      item.classList.remove("about__life__inactive");
+      item.classList.add("about__life__active");
+    }
+    // if (item.classList.contains("about__life__active")) {
+    //   life.forEach((item) => {
+    //     item.classList.remove("about__life__active");
+    //     item.classList.remove("about__life__inactive");
+    //   });
+    // }
+  });
+});
+
+/**
  * Work modals close & open
  */
 const modal__wrapper = document.querySelector(".work__modal__wrapper");
@@ -136,6 +162,35 @@ tl__skill.from(".item__line", {
   ease: "power1.out",
 });
 
+//scroll-animations work
+
+const tl__work = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".work__container",
+    start: "top center",
+  },
+});
+
+gsap.from(".work__h1", {
+  scrollTrigger: {
+    trigger: ".work__section",
+    start: "top center",
+  },
+  duration: 1,
+  opacity: 0,
+  scale: 2,
+  y: "100%",
+  ease: "back",
+});
+
+tl__work.from(".work__item", {
+  duration: 1,
+  y: "100%",
+  opacity: 0,
+  ease: "power2.out",
+  stagger: 0.5,
+});
+
 gsap.from(".icon__container", {
   scrollTrigger: {
     trigger: ".icon__container",
@@ -147,6 +202,7 @@ gsap.from(".icon__container", {
   stagger: 0.25,
   ease: "power3.out",
 });
+//icons animations
 
 const tl__icons = gsap.timeline({ repeat: -1 });
 
@@ -215,35 +271,6 @@ tl__icons.to(".react", {
   duration: 2,
   rotate: 720,
   ease: "back",
-});
-
-//scroll-animations work
-
-const tl__work = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".work__container",
-    start: "top center",
-  },
-});
-
-gsap.from(".work__h1", {
-  scrollTrigger: {
-    trigger: ".work__section",
-    start: "top center",
-  },
-  duration: 1,
-  opacity: 0,
-  scale: 2,
-  y: "100%",
-  ease: "back",
-});
-
-tl__work.from(".work__item", {
-  duration: 1,
-  y: "100%",
-  opacity: 0,
-  ease: "power2.out",
-  stagger: 0.5,
 });
 
 //scroll-animations contact

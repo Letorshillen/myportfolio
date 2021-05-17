@@ -22,7 +22,7 @@ $gradient: linear-gradient(135deg, #ffb0c8 0%, #3a75f0 100%);
 }
 
 @mixin desktop {
-  @media (min-width: 1200px) {
+  @media (min-width: 968px) {
     @content;
   }
 }

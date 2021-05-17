@@ -15,9 +15,15 @@
 }
 
 .about__text {
+  display: block;
+  margin: auto;
   margin-bottom: 40px;
   text-align: center;
   width: 100%;
+
+  @include desktop {
+    width: 70%;
+  }
 }
 
 .skill__container {
@@ -75,53 +81,93 @@
   width: 30%;
 }
 
-.about__life {
+.about__life__container {
   width: 100%;
-  height: 300px;
-  background: $primary-color;
-}
-
-.about__icons {
-  margin-top: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  height: 500px;
+  border-radius: 5px;
+  overflow: hidden;
 
   @include tablet {
-    flex-direction: row;
-  }
-
-  @include desktop {
-    margin-top: 70px;
+    display: flex;
+    height: 300px;
   }
 }
 
-.icon__container {
-  margin: 30px;
-  text-align: center;
-}
-
-.icon__img {
+.about__life {
+  transition: all 0.4s ease-in;
+  width: 100%;
+  height: 25%;
+  background: $highlight-color;
+  padding: 10px;
   overflow: hidden;
-  width: 50%;
 
-  @include mobile {
-    width: 30%;
+  &:nth-child(odd) {
+    background: $highlight-color2;
   }
 
+  @include tablet {
+    width: 25%;
+    height: 100%;
+  }
+}
+
+.about__life__active {
+  height: 70%;
   @include tablet {
     width: 70%;
-  }
-
-  @include desktop {
-    width: 60%;
+    height: 100%;
   }
 }
 
-.desktop {
-  opacity: 0;
+.about__life__inactive {
+  height: 10%;
+  cursor: pointer;
+  @include tablet {
+    width: 10%;
+    height: 100%;
+  }
+  &:hover {
+    h3::after {
+      width: 350px;
+    }
+
+    h3 {
+      color: white;
+    }
+  }
+}
+.about__life__inactive h3 {
+  line-height: 28px;
+  font-size: 30px;
+  @include tablet {
+    line-height: 120%;
+    font-size: 45px;
+    transform: translateY(20%) rotate(90deg);
+  }
+  &::after {
+    transition: all 0.2s ease-in;
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    content: "";
+    width: 0px;
+    height: 125%;
+    background: $gradient;
+    z-index: -1;
+  }
 }
 
-.icon__h3 {
-  margin: 15px 0;
+.about__life__inactive p {
+  visibility: hidden;
+}
+
+.about__h3 {
+  transition: all 0.2s ease-in;
+  font-weight: 600;
+  color: $primary-color;
+}
+
+.about__life__text {
+  margin-top: 10px;
+  color: white;
 }
