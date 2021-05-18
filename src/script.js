@@ -73,7 +73,6 @@ sectionObserver.observe(section__hero);
  */
 
 const life = document.querySelectorAll(".about__life");
-const life1 = document.querySelector(".about__life1");
 
 life.forEach((item) => {
   item.addEventListener("click", () => {
@@ -85,12 +84,13 @@ life.forEach((item) => {
       item.classList.remove("about__life__inactive");
       item.classList.add("about__life__active");
     }
-    // if (item.classList.contains("about__life__active")) {
-    //   life.forEach((item) => {
-    //     item.classList.remove("about__life__active");
-    //     item.classList.remove("about__life__inactive");
-    //   });
-    // }
+  });
+});
+
+const human = document.querySelector(".about__human");
+life.forEach((item) => {
+  item.addEventListener("mousemove", (e) => {
+    human.style.left = e.pageX + "px";
   });
 });
 
