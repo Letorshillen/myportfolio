@@ -89,57 +89,6 @@ life.forEach((item) => {
 
 // going forward animations //
 
-//timelines path
-
-let playing = false;
-
-const tl__path = gsap.timeline({
-  paused: true,
-  // onComplete: () => {
-  //   playing = false;
-  // },
-});
-
-tl__path.to(".about__path", {
-  duration: 4,
-  width: 100 + "%",
-});
-
-tl__path.to(
-  ".about__human",
-  {
-    duration: 4,
-    left: 90 + "%",
-  },
-  "-=4"
-);
-
-tl__path.addPause(1);
-tl__path.addPause(2);
-
-//events path
-
-const about__schule = document.querySelector(".about__schule");
-const about__ausbildung = document.querySelector(".about__ausbildung");
-const about__fest = document.querySelector(".about__fest");
-const about__privat = document.querySelector(".about__privat");
-
-about__schule.addEventListener("click", () => {
-  tl__path.progress(0).pause();
-});
-
-about__ausbildung.addEventListener("click", () => {
-  tl__path.progress(0).play();
-});
-
-about__fest.addEventListener("click", () => {
-  tl__path.progress(0.25).play();
-});
-
-about__privat.addEventListener("click", () => {
-  tl__path.progress(0.5).play();
-});
-
 //human movements
 gsap.set("#arm-left,  #leg-left", {
   transformOrigin: "right 50%",
@@ -149,10 +98,14 @@ gsap.set("#arm-right, #leg-right", {
   transformOrigin: "left 50%",
 });
 
-const tl__human = gsap.timeline({ repeat: -1, yoyo: true });
+const tl__human = gsap.timeline({
+  repeat: 1,
+  yoyo: true,
+  paused: true,
+});
 
 tl__human.to("#arm-left", {
-  duration: 1,
+  duration: 0.5,
   rotation: "-180",
   x: -10,
   y: 15,
@@ -161,35 +114,69 @@ tl__human.to("#arm-left", {
 tl__human.to(
   "#arm-right",
   {
-    duration: 1,
+    duration: 0.5,
     rotation: "150",
     x: -10,
     y: -10,
   },
-  "-=1"
+  "-=0.5"
 );
 
 tl__human.to(
   "#leg-left",
   {
-    duration: 1,
+    duration: 0.5,
     rotation: "-100",
     x: 10,
     y: -10,
   },
-  "-=1"
+  "-=0.5"
 );
 
 tl__human.to(
   "#leg-right",
   {
-    duration: 1,
+    duration: 0.5,
     rotation: "100",
     y: -50,
     x: -25,
   },
-  "-=1"
+  "-=0.5"
 );
+
+// events
+
+const about__schule = document.querySelector(".about__schule");
+const about__ausbildung = document.querySelector(".about__ausbildung");
+const about__fest = document.querySelector(".about__fest");
+const about__privat = document.querySelector(".about__privat");
+
+const about__path = document.querySelector(".about__path");
+const about__human = document.querySelector(".about__human");
+
+about__schule.addEventListener("click", () => {
+  about__path.style.width = "25%";
+  about__human.style.left = "20%";
+  tl__human.restart();
+});
+
+about__ausbildung.addEventListener("click", () => {
+  about__path.style.width = "50%";
+  about__human.style.left = "45%";
+  tl__human.restart();
+});
+
+about__fest.addEventListener("click", () => {
+  about__path.style.width = "75%";
+  about__human.style.left = "70%";
+  tl__human.restart();
+});
+
+about__privat.addEventListener("click", () => {
+  about__path.style.width = "100%";
+  about__human.style.left = "90%";
+  tl__human.restart();
+});
 
 /**
  * Work modals close & open
@@ -245,6 +232,17 @@ gsap.from(".about__container", {
   ease: "power3.out",
 });
 
+gsap.from(".about__text", {
+  scrollTrigger: {
+    trigger: ".about__text",
+    start: "top center",
+  },
+  duration: 1,
+  opacity: 0,
+  y: "-50%",
+  ease: "power3.out",
+});
+
 tl__skill.from(".skill__container", {
   duration: 1,
   opacity: 0,
@@ -257,6 +255,17 @@ tl__skill.from(".item__line", {
   width: "0%",
   stagger: 0.25,
   ease: "power1.out",
+});
+
+gsap.from(".about__life__container", {
+  scrollTrigger: {
+    trigger: ".about__life__container",
+    start: "top center",
+  },
+  duration: 1,
+  opacity: 0,
+  x: "-50%",
+  ease: "power3.out",
 });
 
 //scroll-animations work

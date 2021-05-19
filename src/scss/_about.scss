@@ -211,6 +211,7 @@
 }
 
 .about__path {
+  transition: all 0.8s ease-in;
   width: 25%;
   height: 10px;
   position: relative;
@@ -219,6 +220,7 @@
 }
 
 .about__human {
+  transition: all 0.8s ease-in;
   pointer-events: none;
   position: relative;
   top: 0;
