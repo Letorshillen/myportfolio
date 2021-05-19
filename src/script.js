@@ -87,12 +87,109 @@ life.forEach((item) => {
   });
 });
 
-const human = document.querySelector(".about__human");
-life.forEach((item) => {
-  item.addEventListener("mousemove", (e) => {
-    human.style.left = e.pageX + "px";
-  });
+// going forward animations //
+
+//timelines path
+
+let playing = false;
+
+const tl__path = gsap.timeline({
+  paused: true,
+  // onComplete: () => {
+  //   playing = false;
+  // },
 });
+
+tl__path.to(".about__path", {
+  duration: 4,
+  width: 100 + "%",
+});
+
+tl__path.to(
+  ".about__human",
+  {
+    duration: 4,
+    left: 90 + "%",
+  },
+  "-=4"
+);
+
+tl__path.addPause(1);
+tl__path.addPause(2);
+
+//events path
+
+const about__schule = document.querySelector(".about__schule");
+const about__ausbildung = document.querySelector(".about__ausbildung");
+const about__fest = document.querySelector(".about__fest");
+const about__privat = document.querySelector(".about__privat");
+
+about__schule.addEventListener("click", () => {
+  tl__path.progress(0).pause();
+});
+
+about__ausbildung.addEventListener("click", () => {
+  tl__path.progress(0).play();
+});
+
+about__fest.addEventListener("click", () => {
+  tl__path.progress(0.25).play();
+});
+
+about__privat.addEventListener("click", () => {
+  tl__path.progress(0.5).play();
+});
+
+//human movements
+gsap.set("#arm-left,  #leg-left", {
+  transformOrigin: "right 50%",
+});
+
+gsap.set("#arm-right, #leg-right", {
+  transformOrigin: "left 50%",
+});
+
+const tl__human = gsap.timeline({ repeat: -1, yoyo: true });
+
+tl__human.to("#arm-left", {
+  duration: 1,
+  rotation: "-180",
+  x: -10,
+  y: 15,
+});
+
+tl__human.to(
+  "#arm-right",
+  {
+    duration: 1,
+    rotation: "150",
+    x: -10,
+    y: -10,
+  },
+  "-=1"
+);
+
+tl__human.to(
+  "#leg-left",
+  {
+    duration: 1,
+    rotation: "-100",
+    x: 10,
+    y: -10,
+  },
+  "-=1"
+);
+
+tl__human.to(
+  "#leg-right",
+  {
+    duration: 1,
+    rotation: "100",
+    y: -50,
+    x: -25,
+  },
+  "-=1"
+);
 
 /**
  * Work modals close & open
