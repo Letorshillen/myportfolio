@@ -17,7 +17,6 @@ import lpFragmentShader from "./shaders/lp/fragment.glsl";
  */
 
 // debug
-
 const gui = new dat.GUI();
 
 //scene
@@ -29,16 +28,25 @@ scene.background = new THREE.Color(0xffb0c8);
 /**
  * Loaders
  */
-// Texture loader
-const textureLoader = new THREE.TextureLoader();
+//Loading Manager
+const loadingBar = document.querySelector(".hero__loading-bar");
 
-// Draco loader
-const dracoLoader = new DRACOLoader();
-dracoLoader.setDecoderPath("draco/");
+const loadingManager = new THREE.LoadingManager(
+  () => {
+    gsap.to(loadingMaterial.uniforms.uAlpha, { duration: 3, value: 0 });
+    loadingBar.style.opacity = "0";
+  },
+  (itemURL, itemsLoaded, itemsTotal) => {
+    const progress = itemsLoaded / itemsTotal;
+    loadingBar.style.transform = `scaleX(${progress})`;
+  }
+);
+
+// Texture loader
+const textureLoader = new THREE.TextureLoader(loadingManager);
 
 // GLTF loader
-const gltfLoader = new GLTFLoader();
-gltfLoader.setDRACOLoader(dracoLoader);
+const gltfLoader = new GLTFLoader(loadingManager);
 
 /**
  * Textures
@@ -50,6 +58,30 @@ bakedFloorTexture.encoding = THREE.sRGBEncoding;
 const bakedDeskTexture = textureLoader.load("bakedDesk.jpg");
 bakedDeskTexture.flipY = false;
 bakedDeskTexture.encoding = THREE.sRGBEncoding;
+
+/**
+ * Loader
+ */
+const loadingGeometry = new THREE.PlaneBufferGeometry(2, 2, 1, 1);
+const loadingMaterial = new THREE.ShaderMaterial({
+  transparent: true,
+  uniforms: {
+    uAlpha: { value: 1 },
+  },
+  vertexShader: `
+    void main(){
+      gl_Position = vec4(position, 1.0);
+    }
+  `,
+  fragmentShader: `
+    uniform float uAlpha;
+    void main(){
+      gl_FragColor = vec4(1.0, 0.69, 0.78, uAlpha);
+    }
+  `,
+});
+const loading = new THREE.Mesh(loadingGeometry, loadingMaterial);
+scene.add(loading);
 
 /**
  * Objects
@@ -234,6 +266,9 @@ controls.minPolarAngle = Math.PI * 0.2;
 controls.maxAzimuthAngle = -Math.PI * 0.5;
 controls.minAzimuthAngle = Math.PI;
 
+const minPan = new THREE.Vector3(-1, 0, -1);
+const maxPan = new THREE.Vector3(0, 1, 0);
+
 /**
  * renderer
  */
@@ -261,7 +296,7 @@ const tick = () => {
   display2LightMaterial.uniforms.uTime.value = elapsedTime;
   lpMaterial.uniforms.uTime.value = elapsedTime;
 
-  controls.update();
+  controls.update(controls.target.clamp(minPan, maxPan));
 
   renderer.render(scene, camera);
 

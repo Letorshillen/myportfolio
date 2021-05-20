@@ -75,3 +75,14 @@
   top: 0;
   left: 0;
 }
+
+.hero__loading-bar {
+  transition: all 0.5s;
+  position: absolute;
+  top: 50%;
+  width: 50%;
+  height: 4px;
+  background: white;
+  transform-origin: top left;
+  transform: scaleX(0);
+}
