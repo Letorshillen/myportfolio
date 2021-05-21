@@ -1,6 +1,7 @@
 import "./scss/style.scss";
 import "./three.js";
 import "./slider1.js";
+import "./aboutchart.js";
 import img from "../static/images/potrait.jpg";
 
 const aboutImg = document.querySelector(".about__img");
@@ -243,18 +244,11 @@ gsap.from(".about__text", {
   ease: "power3.out",
 });
 
-tl__skill.from(".skill__container", {
+tl__skill.from(".about__chart__container", {
   duration: 1,
   opacity: 0,
   x: "50%",
   ease: "power3.out",
-});
-
-tl__skill.from(".item__line", {
-  duration: 0.8,
-  width: "0%",
-  stagger: 0.25,
-  ease: "power1.out",
 });
 
 gsap.from(".about__life__container", {

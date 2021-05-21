@@ -26,59 +26,9 @@
   }
 }
 
-.skill__container {
+.about__chart__container {
   margin: 20px;
   width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.skill__content {
-  width: 100%;
-  margin-bottom: 15px;
-}
-
-.skill__name {
-  color: $highlight-color2;
-  z-index: 2;
-}
-
-.skill__line {
-  position: relative;
-  width: 100%;
-  height: 20px;
-  background-color: $highlight-color2;
-}
-
-.item__line {
-  position: absolute;
-  height: 20px;
-  background-color: $highlight-color;
-}
-
-.item1__line {
-  width: 70%;
-}
-
-.item2__line {
-  width: 60%;
-}
-
-.item3__line {
-  width: 50%;
-}
-
-.item4__line {
-  width: 40%;
-}
-
-.item5__line {
-  width: 30%;
-}
-
-.item6__line {
-  width: 30%;
 }
 
 .about__life__container {
@@ -217,6 +167,7 @@
   position: relative;
   bottom: 0;
   background: $gradient;
+  will-change: width;
 }
 
 .about__human {
@@ -228,6 +179,7 @@
   height: 50px;
   width: 50px;
   margin-left: 5px;
+  will-change: left;
 
   @include tablet {
     height: 70px;

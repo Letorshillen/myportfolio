@@ -30,15 +30,21 @@ scene.background = new THREE.Color(0xffb0c8);
  */
 //Loading Manager
 const loadingBar = document.querySelector(".hero__loading-bar");
+const loadingNumbers = document.querySelector(".hero__loading-numbers");
 
 const loadingManager = new THREE.LoadingManager(
   () => {
-    gsap.to(loadingMaterial.uniforms.uAlpha, { duration: 3, value: 0 });
-    loadingBar.style.opacity = "0";
+    window.setTimeout(() => {
+      gsap.to(loadingMaterial.uniforms.uAlpha, { duration: 3, value: 0 });
+      loadingBar.style.opacity = "0";
+      loadingNumbers.style.opacity = "0";
+    }, 500);
   },
   (itemURL, itemsLoaded, itemsTotal) => {
     const progress = itemsLoaded / itemsTotal;
     loadingBar.style.transform = `scaleX(${progress})`;
+
+    loadingNumbers.innerHTML = progress * 100;
   }
 );
 
