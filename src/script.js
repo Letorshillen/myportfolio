@@ -1,8 +1,12 @@
 import "./scss/style.scss";
 import "./three.js";
 import "./slider1.js";
-import "./aboutchart.js";
+// import "./aboutchart.js";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import img from "../static/images/potrait.jpg";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const aboutImg = document.querySelector(".about__img");
 aboutImg.src = img;
@@ -251,9 +255,9 @@ tl__skill.from(".about__chart__container", {
   ease: "power3.out",
 });
 
-gsap.from(".about__life__container", {
+gsap.from(".about__life__wrapper", {
   scrollTrigger: {
-    trigger: ".about__life__container",
+    trigger: ".about__life__wrapper",
     start: "top center",
   },
   duration: 1,

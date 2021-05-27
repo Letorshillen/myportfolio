@@ -9,6 +9,11 @@ $gradient: linear-gradient(135deg, #ffb0c8 0%, #3a75f0 100%);
   src: url("../../static/fonts/ArtDystopia.ttf");
 }
 
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../static/fonts/Montserrat-SemiBold.ttf");
+}
+
 @mixin mobile {
   @media (min-width: 480px) {
     @content;
