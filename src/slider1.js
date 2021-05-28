@@ -27,10 +27,12 @@ const canvas = document.querySelector(".work__modal__slider");
 
 const app = new PIXI.Application({
   backgroundColor: 0xffffff,
-  view: canvas,
-  autoResize: true,
-  resizeTo: canvas,
+  // resizeTo: canvas,
+  width: 1500,
+  height: 300,
 });
+
+canvas.appendChild(app.view);
 
 const images = [w1, w2, w3, w4];
 
@@ -40,8 +42,21 @@ app.stage.addChild(container);
 
 //calculating img size
 const margin = 30;
-const width = (canvas.offsetWidth - 2 * margin) / 3;
-const height = canvas.offsetHeight;
+let width = (canvas.offsetWidth - 2 * margin) / 3;
+let height = canvas.offsetHeight;
+
+//resize
+// const resize = () => {
+//   const parent = app.view.parentNode;
+//   console.log(canvas.offsetWidth);
+
+//   width = (canvas.offsetWidth - 2 * margin) / 3;
+//   height = canvas.offsetHeight;
+
+//   console.log(width);
+// };
+
+// window.addEventListener("resize", resize);
 
 //slider variables
 const thumbs = [];
@@ -156,7 +171,7 @@ loadImages(images, (images) => {
     const displacementFilter = new PIXI.filters.DisplacementFilter(
       displacementSprite
     );
-    displacementFilter.scale.x = 50;
+    displacementFilter.scale.x = 75;
 
     displacementFilter.autoFit = false;
 

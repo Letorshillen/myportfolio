@@ -68,8 +68,8 @@
 }
 
 .work__modal__wrapper {
-  visibility: hidden;
   position: fixed;
+  visibility: hidden;
   width: 100vw;
   height: 100vh;
   display: grid;
@@ -83,21 +83,25 @@
 .work__modal {
   opacity: 0;
   position: relative;
-  width: 0vw;
-  height: 0vh;
+  width: 80vw;
+  height: 80vh;
   background: white;
   transition: all 0.3s ease-in;
   border-radius: 5px;
-  overflow: hidden;
-}
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE 11 */
+  scrollbar-width: none; /* Firefox 64 */
 
-.work__modal__active {
-  width: 80vw;
-  height: 80vh;
-  opacity: 1;
   @include big-desktop {
     width: 50vw;
   }
+}
+
+.work__modal::-webkit-scrollbar {
+  display: none;
+}
+.work__modal__active {
+  opacity: 1;
 }
 
 .work__modal__close {
@@ -141,19 +145,14 @@
   display: flex;
   justify-content: center;
   height: 100%;
-  overflow-y: scroll;
-  -ms-overflow-style: none; /* IE 11 */
-  scrollbar-width: none; /* Firefox 64 */
-}
-
-.work__modal__inner::-webkit-scrollbar {
-  display: none;
+  width: 100%;
 }
 
 .work__modal__slider {
-  background: red;
   width: 100%;
   height: 200px;
+  overflow: hidden;
+  margin-bottom: 20px;
 }
 
 .work__modal__h2 {
@@ -170,7 +169,11 @@
 }
 
 .work__modal__cta {
-  margin: 20px;
+  margin: 10px;
+
+  @include tablet {
+    margin: 20px;
+  }
 }
 
 .work__icons {
