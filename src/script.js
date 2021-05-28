@@ -1,7 +1,6 @@
 import "./scss/style.scss";
 import "./three.js";
 import "./slider1.js";
-// import "./aboutchart.js";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import img from "../static/images/potrait.jpg";
@@ -245,13 +244,6 @@ gsap.from(".about__text", {
   duration: 1,
   opacity: 0,
   y: "-50%",
-  ease: "power3.out",
-});
-
-tl__skill.from(".about__chart__container", {
-  duration: 1,
-  opacity: 0,
-  x: "50%",
   ease: "power3.out",
 });
 

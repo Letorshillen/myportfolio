@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tomtomtom</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
   </head>
   <body>
     <header>
       <nav>
+        <a href="#" class="logo"></a>
         <div class="js__nav__burger">
           <div class="burger__line"></div>
           <div class="burger__line"></div>
@@ -20,6 +20,8 @@
           <a href="#about" class="js__nav__link">about</a>
           <div class="nav__line"></div>
           <a href="#work" class="js__nav__link">work</a>
+          <div class="nav__line"></div>
+          <a href="https://github.com/Letorshillen" target="blank" class="js__nav__link">github</a>
           <div class="nav__line"></div>
           <a href="#contact" class="js__nav__link contact__nav">contact</a>
         </div>
@@ -47,18 +49,14 @@
               <h2 class="about__h2">this is me :( :)</h2>
               <img alt="me" class="about__img" />
             </div>
-
-            <div class="about__chart__container">
-              <!-- <canvas class="about__chart"></canvas> -->
-              was kommt hier hin
-            </div>
+            <p class="about__text">
+              hey i like doing front-end-development. actually i am a graphic
+              designer, but that sucks and i am wiriting code even though i have
+              no idea what i am doing at all :^) :^) :^) :^) :^) :^) :^) :^) :^)
+              :^) :^) :^) :^) :^)
+            </p>
           </div>
-          <p class="about__text">
-            hey i like doing front-end-development. actually i am a graphic
-            designer, but that sucks and i am wiriting code even though i have
-            no idea what i am doing at all :^) :^) :^) :^) :^) :^) :^) :^) :^)
-            :^) :^) :^) :^) :^)
-          </p>
+          
 
           <div class="about__life__wrapper">
             <h2 class="">my life so far</h2>
@@ -127,7 +125,7 @@
         <div class="wrapper">
           <h1 class="work__h1">work</h1>
           <div class="work__modal__wrapper">
-            <div class="work__modal work__modal1">
+            <div class="work__modal work__modal1 work__modal__active">
               <div class="work__modal__close work__modal__close1"></div>
               <div class="work__modal__inner">
                 <canvas class="work__modal__slider"></canvas>

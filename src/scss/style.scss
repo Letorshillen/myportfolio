@@ -91,6 +91,7 @@ p {
 
   @include tablet {
     flex-direction: row;
+    gap: 5%;
   }
 }
 
