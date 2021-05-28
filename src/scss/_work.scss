@@ -68,7 +68,7 @@
 }
 
 .work__modal__wrapper {
-  visibility: visible;
+  visibility: hidden;
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -154,6 +154,15 @@
   background: red;
   width: 100%;
   height: 200px;
+}
+
+.work__modal__h2 {
+  position: absolute;
+  top: 15%;
+  font-size: 40px;
+  color: white;
+  white-space: nowrap;
+  mix-blend-mode: difference;
 }
 
 .work__modal__text {

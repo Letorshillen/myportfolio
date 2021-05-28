@@ -139,7 +139,7 @@ loadImages(images, (images) => {
     app.stage.addChild(displacementSprite);
 
     let imageDisp = {
-      w: 324,
+      w: 800,
       h: 324,
     };
 
@@ -150,8 +150,17 @@ loadImages(images, (images) => {
 
     let coverDisp = fit(imageDisp, parentDisp);
 
-    displacementSprite.position.set(coverDisp.left + 100, coverDisp.top / 2);
-    displacementSprite.scale.set(coverDisp.scale / 2);
+    displacementSprite.position.set(coverDisp.left, coverDisp.top);
+    displacementSprite.scale.set(coverDisp.scale, coverDisp.scale);
+
+    const displacementFilter = new PIXI.filters.DisplacementFilter(
+      displacementSprite
+    );
+    displacementFilter.scale.x = 50;
+
+    displacementFilter.autoFit = false;
+
+    container.filters = [displacementFilter];
 
     //rendering
     app.ticker.add(() => {
