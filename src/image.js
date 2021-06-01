@@ -16,7 +16,7 @@ const textureLoader = new THREE.TextureLoader();
  */
 const sizes = {
   width: container.offsetWidth,
-  height: container.offsetHeight,
+  height: 400,
 };
 
 if (sizes.width < 300) {
@@ -58,6 +58,22 @@ const onMouseMove = (e) => {
     duration: 0.5,
     x: (e.clientX / window.innerWidth) * 2 - 1,
     y: (e.clientY / window.innerHeight) * 2 - 1,
+  });
+
+  gsap.to(imageMesh.rotation, {
+    duration: 0.5,
+    x: mouse.y * 0.2,
+    y: mouse.x * (Math.PI / 12),
+  });
+};
+
+window.addEventListener("touchmove", (e) => onTouchMove(e));
+
+const onTouchMove = (e) => {
+  gsap.to(mouse, {
+    duration: 0.5,
+    x: (e.changedTouches[0].clientX / window.innerWidth) * 2 - 1,
+    y: (e.changedTouches[0].clientY / window.innerHeight) * 2 - 1,
   });
 
   gsap.to(imageMesh.rotation, {
