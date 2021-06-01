@@ -4,7 +4,7 @@ import img from "../static/images/potrait.jpg";
 
 //scene
 const canvas = document.querySelector(".img__canvas");
-const container = document.querySelector(".about__img");
+const container = document.querySelector(".about__img__container");
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xffffff);
 

@@ -1,11 +1,14 @@
-.about__container {
-  margin: 30px 0;
+.about__wrapper {
+  margin: 40px 0;
+}
+
+.about__img__container {
   display: flex;
   align-items: center;
   flex-direction: column;
   position: relative;
 
-  @include desktop {
+  @include tablet {
     width: 50%;
   }
 }
@@ -15,7 +18,6 @@
   width: 100%;
   height: 400px;
   object-fit: cover;
-  margin: 20px 0;
 }
 
 .img__canvas {
@@ -29,7 +31,7 @@
 .about__text {
   text-align: center;
 
-  @include desktop {
+  @include tablet {
     width: 50%;
   }
 }

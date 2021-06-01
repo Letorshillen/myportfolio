@@ -226,9 +226,9 @@ gsap.from(".about__h1", {
   ease: "back",
 });
 
-gsap.from(".about__container", {
+gsap.from(".about__img__container", {
   scrollTrigger: {
-    trigger: ".about__container",
+    trigger: ".about__img__container",
     start: "top center",
   },
   duration: 1,
