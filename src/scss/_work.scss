@@ -45,6 +45,7 @@
 
 .work__h2,
 .work__text {
+  will-change: transform;
   transition: all 0.5s ease-out;
   transform: translate3d(-100vw, 0, 0);
 }
@@ -153,15 +154,20 @@
   height: 200px;
   overflow: hidden;
   margin-bottom: 20px;
+  margin-top: -30px;
 }
 
 .work__modal__h2 {
   position: absolute;
-  top: 15%;
-  font-size: 40px;
+  top: 10%;
+  font-size: 35px;
   color: white;
   white-space: nowrap;
   mix-blend-mode: difference;
+
+  @include tablet {
+    font-size: 40px;
+  }
 }
 
 .work__modal__text {

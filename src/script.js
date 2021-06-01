@@ -1,6 +1,7 @@
 import "./scss/style.scss";
-import "./three.js";
+import "./hero.js";
 import "./slider1.js";
+import "./image.js";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import img from "../static/images/potrait.jpg";

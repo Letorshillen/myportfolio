@@ -76,7 +76,7 @@ p {
   margin: 0 40px;
 
   @include desktop {
-    margin: 0 200px;
+    margin: 0 100px;
   }
   @include big-desktop {
     margin: 0 400px;
