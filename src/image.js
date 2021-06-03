@@ -4,7 +4,6 @@ import img from "../static/images/potrait.jpg";
 
 //scene
 const canvas = document.querySelector(".img__canvas");
-const container = document.querySelector(".about__img__container");
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xffffff);
 
@@ -15,23 +14,40 @@ const textureLoader = new THREE.TextureLoader();
  * Sizes
  */
 const sizes = {
-  width: container.offsetWidth,
+  width: canvas.clientWidth,
   height: 400,
+  aspect: canvas.clientWidth / canvas.clientHeight,
 };
 
-if (sizes.width < 300) {
-  sizes.width = 300;
-}
+canvas.width = sizes.width;
+canvas.height = sizes.height;
+
+const useAspect = (width, height, factor) => {
+  const v = sizes;
+  const adaptedHeight =
+    height * (v.aspect > width / height ? v.width / width : v.height / height);
+  const adaptedWidth =
+    width * (v.aspect > width / height ? v.width / width : v.height / height);
+  return [adaptedWidth * factor, adaptedHeight * factor, 1];
+};
+
+const scale = useAspect(
+  1200, // Pixel-width
+  1600, // Pixel-height
+  1 // Optional scaling factor
+);
 
 window.addEventListener("resize", () => {
-  sizes.width = container.offsetWidth;
-  sizes.height = container.offsetHeight;
+  sizes.width = canvas.clientWidth;
+  sizes.height = canvas.clientHeight;
 
   camera.aspect = sizes.width / sizes.height;
   camera.updateProjectionMatrix();
 
-  renderer.setSize(sizes.width, sizes.height);
+  renderer.setViewport(0, 0, sizes.width, sizes.height);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  console.log(window.devicePixelRatio);
 });
 
 /**
@@ -43,7 +59,7 @@ const imageGeometry = new THREE.PlaneBufferGeometry(1, 1, 1, 1);
 const imageMaterial = new THREE.MeshBasicMaterial({ map: image });
 
 const imageMesh = new THREE.Mesh(imageGeometry, imageMaterial);
-imageMesh.scale.set(sizes.width, sizes.height, 1);
+imageMesh.scale.set(scale[0], scale[1], scale[2]);
 
 scene.add(imageMesh);
 
@@ -78,8 +94,8 @@ const onTouchMove = (e) => {
 
   gsap.to(imageMesh.rotation, {
     duration: 0.5,
-    x: mouse.y * 0.2,
-    y: mouse.x * (Math.PI / 12),
+    x: mouse.y * 0.5,
+    y: mouse.x * (Math.PI / 6),
   });
 };
 
@@ -109,10 +125,10 @@ scene.add(camera);
 
 const renderer = new THREE.WebGLRenderer({
   canvas: canvas,
-  alpha: true,
+  antialias: true,
 });
 
-renderer.setSize(sizes.width, sizes.height);
+renderer.setViewport(0, 0, sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 const tick = () => {

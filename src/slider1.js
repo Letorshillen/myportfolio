@@ -42,8 +42,8 @@ app.stage.addChild(container);
 
 //calculating img size
 const margin = 30;
-let width = (canvas.offsetWidth - 2 * margin) / 3;
-let height = canvas.offsetHeight;
+let width = (canvas.clientWidth - 2 * margin) / 3;
+let height = canvas.clientHeight;
 
 //resize
 // const resize = () => {
@@ -159,8 +159,8 @@ loadImages(images, (images) => {
     };
 
     let parentDisp = {
-      w: canvas.offsetWidth,
-      h: canvas.offsetHeight,
+      w: canvas.clientWidth,
+      h: canvas.clientHeight,
     };
 
     let coverDisp = fit(imageDisp, parentDisp);

@@ -4,12 +4,9 @@ import "./slider1.js";
 import "./image.js";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import img from "../static/images/potrait.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const aboutImg = document.querySelector(".about__img");
-aboutImg.src = img;
 /**
  * Nav
  */

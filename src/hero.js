@@ -3,7 +3,6 @@ import { gsap } from "gsap";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import * as dat from "dat.gui";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import particelsVertexShader from "./shaders/particles/vertex.glsl";
 import particelsFragmentShader from "./shaders/particles/fragment.glsl";
 import display1VertexShader from "./shaders/display1/vertex.glsl";
