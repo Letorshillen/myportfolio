@@ -45,7 +45,7 @@ window.addEventListener("resize", () => {
   camera.updateProjectionMatrix();
 
   renderer.setViewport(0, 0, sizes.width, sizes.height);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setPixelRatio(window.devicePixelRatio);
 
   console.log(window.devicePixelRatio);
 });
@@ -94,8 +94,8 @@ const onTouchMove = (e) => {
 
   gsap.to(imageMesh.rotation, {
     duration: 0.5,
-    x: mouse.y * 0.5,
-    y: mouse.x * (Math.PI / 6),
+    x: mouse.y * 0.2,
+    y: mouse.x * (Math.PI / 3),
   });
 };
 
@@ -129,7 +129,7 @@ const renderer = new THREE.WebGLRenderer({
 });
 
 renderer.setViewport(0, 0, sizes.width, sizes.height);
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setPixelRatio(window.devicePixelRatio);
 
 const tick = () => {
   renderer.render(scene, camera);

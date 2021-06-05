@@ -1,5 +1,5 @@
 .about__wrapper {
-  margin: 40px 0;
+  margin: 80px 0;
 }
 
 .about__img__container {
@@ -17,174 +17,76 @@
 .img__canvas {
   width: 100%;
   height: 400px;
-  border-radius: 20px;
+  border-radius: 6px;
 }
 
 .about__text {
   text-align: center;
+  margin-top: 30px;
 
   @include tablet {
     width: 50%;
+    margin-top: 0;
   }
 }
 
-.about__chart__container {
-  margin: 20px;
-  width: 100%;
-}
-
-.about__life__container {
-  position: relative;
-  width: 100%;
-  height: 524px;
-  border-radius: 5px;
-  overflow: hidden;
+.life__wrapper {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 1em;
 
   @include tablet {
-    display: flex;
-    height: 300px;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-.about__life {
-  transition: all 0.4s ease-in;
-  width: 100%;
-  height: 25%;
-  background: $primary-color;
+.life__container {
+  background: rgba($highlight-color, 0.7);
+  border-radius: 6px;
   padding: 10px;
   overflow: hidden;
-  border: 1px white solid;
-
-  @include tablet {
-    width: 25%;
-    height: 100%;
-  }
-}
-
-.about__life__active {
-  height: 70%;
-  background: $highlight-color;
-
-  h3 {
-    font-size: 30px;
-    color: $primary-color;
-    &:nth-child(even) {
-      transition: all 0s;
-      display: none;
-    }
-  }
-
-  @include tablet {
-    width: 70%;
-    height: 100%;
-  }
-}
-
-.about__life__inactive {
+  height: 50px;
   transition: all 0.5s ease-in;
-  height: 10%;
-  cursor: pointer;
-  position: relative;
+
+  &:nth-child(1) {
+    background: rgba($highlight-color2, 0.7);
+  }
+  &:nth-child(2) {
+    background: rgba($primary-color, 0.7);
+  }
 
   h3 {
-    position: absolute;
-    line-height: 28px;
-    font-size: 25px;
-    clip-path: inset(0 0 0 0);
-    z-index: 1;
+    display: flex;
+    width: 100%;
+    height: 30px;
+    align-items: center;
+    justify-content: space-between;
+    color: $primary-color;
 
-    &:nth-child(even) {
-      clip-path: inset(0 100% 0 0);
+    span {
       color: white;
     }
-
-    @include tablet {
-      top: 50%;
-      left: 50%;
-      line-height: 120%;
-      font-size: 45px;
-      transform: translate(-50%, -50%) rotate(90deg);
-    }
   }
 
-  p {
-    visibility: hidden;
-  }
-
-  &::after {
+  p,
+  ul {
     transition: all 0.5s ease-in;
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: "";
-    width: 100%;
-    height: 0%;
-    background: $gradient;
-    z-index: 0;
+    opacity: 0;
+    transform: translateY(100%);
   }
 
-  &:hover,
-  &:focus,
-  &:active {
-    outline: 0;
-    h3 {
-      clip-path: inset(0 0 0 100%);
-      &:nth-child(even) {
-        clip-path: inset(0 0 0 0);
-      }
-    }
-
-    &::after {
-      height: 100%;
-    }
-  }
-
-  @include tablet {
-    width: 10%;
+  &:hover {
     height: 100%;
+
+    p,
+    ul {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
-}
-
-.about__h3 {
-  transition: all 0.5s ease-in;
-  font-weight: 800;
-  color: $highlight-color;
-}
-
-.about__life__text {
-  margin-top: 10px;
-  color: $primary-color;
-}
-
-.about__life__run {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-}
-
-.about__path {
-  transition: all 0.8s ease-in;
-  width: 25%;
-  height: 10px;
-  position: relative;
-  bottom: 0;
-  background: $gradient;
-  will-change: width;
-}
-
-.about__human {
-  transition: all 0.8s ease-in;
-  pointer-events: none;
-  position: relative;
-  top: 0;
-  left: 20%;
-  height: 50px;
-  width: 50px;
-  margin-left: 5px;
-  will-change: left;
-
   @include tablet {
-    height: 70px;
-    width: 70px;
+    &:nth-child(4) {
+      grid-column: 3;
+    }
   }
 }

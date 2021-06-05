@@ -71,116 +71,6 @@ sectionOneOptions);
 sectionObserver.observe(section__hero);
 
 /**
- * about life events
- */
-
-const life = document.querySelectorAll(".about__life");
-
-life.forEach((item) => {
-  item.addEventListener("click", () => {
-    life.forEach((item) => {
-      item.classList.remove("about__life__active");
-      item.classList.add("about__life__inactive");
-    });
-    if (item.classList.contains("about__life__inactive")) {
-      item.classList.remove("about__life__inactive");
-      item.classList.add("about__life__active");
-    }
-  });
-});
-
-// going forward animations //
-
-//human movements
-gsap.set("#arm-left,  #leg-left", {
-  transformOrigin: "right 50%",
-});
-
-gsap.set("#arm-right, #leg-right", {
-  transformOrigin: "left 50%",
-});
-
-const tl__human = gsap.timeline({
-  repeat: 1,
-  yoyo: true,
-  paused: true,
-});
-
-tl__human.to("#arm-left", {
-  duration: 0.5,
-  rotation: "-180",
-  x: -10,
-  y: 15,
-});
-
-tl__human.to(
-  "#arm-right",
-  {
-    duration: 0.5,
-    rotation: "150",
-    x: -10,
-    y: -10,
-  },
-  "-=0.5"
-);
-
-tl__human.to(
-  "#leg-left",
-  {
-    duration: 0.5,
-    rotation: "-100",
-    x: 10,
-    y: -10,
-  },
-  "-=0.5"
-);
-
-tl__human.to(
-  "#leg-right",
-  {
-    duration: 0.5,
-    rotation: "100",
-    y: -50,
-    x: -25,
-  },
-  "-=0.5"
-);
-
-// events
-
-const about__schule = document.querySelector(".about__schule");
-const about__ausbildung = document.querySelector(".about__ausbildung");
-const about__fest = document.querySelector(".about__fest");
-const about__privat = document.querySelector(".about__privat");
-
-const about__path = document.querySelector(".about__path");
-const about__human = document.querySelector(".about__human");
-
-about__schule.addEventListener("click", () => {
-  about__path.style.width = "25%";
-  about__human.style.left = "20%";
-  tl__human.restart();
-});
-
-about__ausbildung.addEventListener("click", () => {
-  about__path.style.width = "50%";
-  about__human.style.left = "45%";
-  tl__human.restart();
-});
-
-about__fest.addEventListener("click", () => {
-  about__path.style.width = "75%";
-  about__human.style.left = "70%";
-  tl__human.restart();
-});
-
-about__privat.addEventListener("click", () => {
-  about__path.style.width = "100%";
-  about__human.style.left = "90%";
-  tl__human.restart();
-});
-
-/**
  * Work modals close & open
  */
 const modal__wrapper = document.querySelector(".work__modal__wrapper");
@@ -236,7 +126,7 @@ gsap.from(".about__img__container", {
 
 gsap.from(".about__text", {
   scrollTrigger: {
-    trigger: ".about__text",
+    trigger: ".about__img__container",
     start: "top center",
   },
   duration: 1,
@@ -245,14 +135,15 @@ gsap.from(".about__text", {
   ease: "power3.out",
 });
 
-gsap.from(".about__life__wrapper", {
+gsap.from(".about__life", {
   scrollTrigger: {
-    trigger: ".about__life__wrapper",
+    trigger: ".about__life",
     start: "top center",
   },
   duration: 1,
   opacity: 0,
-  x: "-50%",
+  y: "-50%",
+  stagger: 0.25,
   ease: "power3.out",
 });
 
@@ -372,7 +263,7 @@ tl__icons.to(".react", {
 const tl__contact = gsap.timeline({
   scrollTrigger: {
     trigger: ".contact__section",
-    start: "top center",
+    start: "top bottom",
   },
 });
 
