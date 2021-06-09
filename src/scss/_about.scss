@@ -35,30 +35,28 @@
   grid-auto-flow: row;
   gap: 1em;
 
-  @include tablet {
+  @include desktop {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 .life__container {
-  background: rgba($highlight-color, 0.7);
+  background: rgba($highlight-color, 0.8);
   border-radius: 6px;
   padding: 10px;
-  overflow: hidden;
-  height: 50px;
+  height: 70px;
   transition: all 0.5s ease-in;
 
   &:nth-child(1) {
-    background: rgba($highlight-color2, 0.7);
+    background: rgba($highlight-color2, 1);
   }
   &:nth-child(2) {
-    background: rgba($primary-color, 0.7);
+    background: $gradient;
   }
 
   h3 {
     display: flex;
     width: 100%;
-    height: 30px;
     align-items: center;
     justify-content: space-between;
     color: $primary-color;
@@ -68,25 +66,51 @@
     }
   }
 
-  p,
   ul {
-    transition: all 0.5s ease-in;
-    opacity: 0;
-    transform: translateY(100%);
+    font-family: TitilliumWeb;
+    list-style-type: "\1F40B";
+  }
+
+  p {
+    color: $primary-color;
   }
 
   &:hover {
-    height: 100%;
-
-    p,
-    ul {
-      transform: translateY(0);
+    .life__modal {
+      visibility: visible;
       opacity: 1;
     }
   }
-  @include tablet {
+
+  @include desktop {
     &:nth-child(4) {
+      width: 80%;
+      justify-self: end;
       grid-column: 3;
     }
   }
+}
+
+.life__modal {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  visibility: hidden;
+  opacity: 0;
+  background: white;
+  width: 80vw;
+  padding: 20px;
+  transition: all 0.5s ease-in;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba($primary-color, 0.4);
+
+  @include desktop {
+    width: 50vw;
+    top: -10%;
+  }
+}
+
+.life__modal__active {
+  opacity: 1;
 }

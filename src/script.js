@@ -78,6 +78,10 @@ const modal1 = document.querySelector(".work__modal1");
 const modal1__close = document.querySelector(".work__modal__close1");
 const modal1__cta = document.querySelector(".work__cta1");
 
+const modal2 = document.querySelector(".work__modal2");
+const modal2__close = document.querySelector(".work__modal__close2");
+const modal2__cta = document.querySelector(".work__cta2");
+
 modal1__cta.addEventListener("click", () => {
   modal1.classList.add("work__modal__active");
   modal__wrapper.style.visibility = "visible";
@@ -85,6 +89,22 @@ modal1__cta.addEventListener("click", () => {
 
 modal1__close.addEventListener("click", () => {
   modal1.classList.remove("work__modal__active");
+  modal__wrapper.style.visibility = "hidden";
+});
+
+modal__wrapper.addEventListener("click", () => {
+  modal1.classList.remove("work__modal__active");
+  modal2.classList.remove("work__modal__active");
+  modal__wrapper.style.visibility = "hidden";
+});
+
+modal2__cta.addEventListener("click", () => {
+  modal2.classList.add("work__modal__active");
+  modal__wrapper.style.visibility = "visible";
+});
+
+modal2__close.addEventListener("click", () => {
+  modal2.classList.remove("work__modal__active");
   modal__wrapper.style.visibility = "hidden";
 });
 

@@ -10,8 +10,27 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $gradient;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $highlight-color2;
+}
+
 html {
   scroll-behavior: smooth;
+  scrollbar-color: $highlight-color transparent;
+  scrollbar-width: thin;
 }
 
 body {
@@ -21,6 +40,7 @@ body {
   height: 100%;
   font-family: Montserrat;
   font-style: normal;
+  overflow: overlay;
 }
 
 main {

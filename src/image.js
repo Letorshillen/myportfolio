@@ -46,8 +46,6 @@ window.addEventListener("resize", () => {
 
   renderer.setViewport(0, 0, sizes.width, sizes.height);
   renderer.setPixelRatio(window.devicePixelRatio);
-
-  console.log(window.devicePixelRatio);
 });
 
 /**
@@ -94,8 +92,8 @@ const onTouchMove = (e) => {
 
   gsap.to(imageMesh.rotation, {
     duration: 0.5,
-    x: mouse.y * 0.2,
-    y: mouse.x * (Math.PI / 3),
+    x: mouse.y * 0.6,
+    y: mouse.x * (Math.PI / 6),
   });
 };
 
