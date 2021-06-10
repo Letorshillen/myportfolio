@@ -11,7 +11,8 @@
   background-position: center;
   background-size: cover;
 
-  &:hover {
+  &:hover,
+  &:focus-within {
     .work__h2,
     .work__text,
     .work__cta {
@@ -78,7 +79,16 @@
   top: 0;
   left: 0;
   z-index: 98;
+}
+
+.modal__background {
   background: rgba($primary-color, 0.5);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .work__modal {

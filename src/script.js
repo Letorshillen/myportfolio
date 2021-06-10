@@ -74,6 +74,7 @@ sectionObserver.observe(section__hero);
  * Work modals close & open
  */
 const modal__wrapper = document.querySelector(".work__modal__wrapper");
+const modal__background = document.querySelector(".modal__background");
 const modal1 = document.querySelector(".work__modal1");
 const modal1__close = document.querySelector(".work__modal__close1");
 const modal1__cta = document.querySelector(".work__cta1");
@@ -92,7 +93,7 @@ modal1__close.addEventListener("click", () => {
   modal__wrapper.style.visibility = "hidden";
 });
 
-modal__wrapper.addEventListener("click", () => {
+modal__background.addEventListener("click", () => {
   modal1.classList.remove("work__modal__active");
   modal2.classList.remove("work__modal__active");
   modal__wrapper.style.visibility = "hidden";
