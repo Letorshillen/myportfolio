@@ -2,12 +2,12 @@ import * as PIXI from "pixi.js";
 import fit from "math-fit";
 import gsap from "gsap";
 
-import img1 from "../static/images/todo1.jpg";
-import img2 from "../static/images/todo2.jpg";
-import img3 from "../static/images/todo3.jpg";
-import img4 from "../static/images/todo4.jpg";
-import img5 from "../static/images/todo5.jpg";
-import img6 from "../static/images/todo6.jpg";
+import img1 from "../static/images/work1/toDo1.jpg";
+import img2 from "../static/images/work1/toDo2.jpg";
+import img3 from "../static/images/work1/toDo3.jpg";
+import img4 from "../static/images/work1/toDo4.jpg";
+import img5 from "../static/images/work1/toDo5.jpg";
+import img6 from "../static/images/work1/toDo6.jpg";
 
 import disp from "../static/images/disp.jpg";
 
