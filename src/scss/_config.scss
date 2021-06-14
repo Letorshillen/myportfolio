@@ -7,16 +7,19 @@ $gradient: linear-gradient(135deg, #ffb0c8 0%, #3a75f0 100%);
 @font-face {
   font-family: "Dystopia";
   src: url("../../static/fonts/ArtDystopia.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Montserrat";
   src: url("../../static/fonts/Montserrat-SemiBold.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "TitilliumWeb";
   src: url("../../static/fonts/TitilliumWeb-Light.ttf");
+  font-display: swap;
 }
 
 @mixin mobile {

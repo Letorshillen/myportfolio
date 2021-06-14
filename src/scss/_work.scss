@@ -30,7 +30,7 @@
 }
 
 .work__item2 {
-  background-image: url("../../static/images/project2.jpg");
+  background-image: url("../../static/images/work2.jpg");
 }
 
 .work__item__inner {
@@ -46,13 +46,15 @@
 
 .work__h2,
 .work__text {
+  color: white;
   will-change: transform;
   transition: all 0.5s ease-out;
   transform: translate3d(-100vw, 0, 0);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.425);
 }
 
 .work__h2 {
-  text-shadow: 1px 1px 0px $primary-color;
+  color: $highlight-color;
 }
 
 .work__cta {
@@ -69,6 +71,8 @@
   cursor: pointer;
 }
 
+//Modal
+
 .work__modal__wrapper {
   position: fixed;
   visibility: hidden;
@@ -81,26 +85,15 @@
   z-index: 98;
 }
 
-.modal__background {
-  background: rgba($primary-color, 0.5);
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
 .work__modal {
   opacity: 0;
-  display: none;
-  position: relative;
+  position: absolute;
   width: 80vw;
   height: 80vh;
   background: white;
+  overflow-y: scroll;
   transition: all 0.3s ease-in;
   border-radius: 5px;
-  overflow-y: scroll;
   -ms-overflow-style: none; /* IE 11 */
   scrollbar-width: none; /* Firefox 64 */
 
@@ -113,7 +106,7 @@
   display: none;
 }
 .work__modal__active {
-  display: block;
+  z-index: 10;
   opacity: 1;
 }
 
@@ -204,6 +197,18 @@
   }
 }
 
+.modal__background {
+  background: rgba($primary-color, 0.5);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+//Icons
+
 .work__icons {
   margin-top: 40px;
   display: flex;
@@ -246,5 +251,6 @@
 }
 
 .icon__h3 {
+  color: white;
   margin: 15px 0;
 }

@@ -2,16 +2,15 @@ import * as PIXI from "pixi.js";
 import fit from "math-fit";
 import gsap from "gsap";
 
-import img1 from "../static/images/work1/toDo1.jpg";
-import img2 from "../static/images/work1/toDo2.jpg";
-import img3 from "../static/images/work1/toDo3.jpg";
-import img4 from "../static/images/work1/toDo4.jpg";
-import img5 from "../static/images/work1/toDo5.jpg";
-import img6 from "../static/images/work1/toDo6.jpg";
+import img1 from "../static/images/work2/rest1.jpg";
+import img2 from "../static/images/work2/rest2.jpg";
+import img3 from "../static/images/work2/rest3.jpg";
+import img4 from "../static/images/work2/rest4.jpg";
+import img5 from "../static/images/work2/rest5.jpg";
 
 import disp from "../static/images/disp.jpg";
 
-const canvas = document.querySelector(".slider1");
+const canvas = document.querySelector(".slider2");
 
 const app = new PIXI.Application({
   backgroundColor: 0xffffff,
@@ -35,7 +34,7 @@ function loadImages(paths, whenLoaded) {
   });
 }
 
-const images = [img1, img2, img3, img4, img5, img6];
+const images = [img1, img2, img3, img4, img5];
 
 //container general
 const container = new PIXI.Container();

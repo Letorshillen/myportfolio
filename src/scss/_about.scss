@@ -36,7 +36,7 @@
   gap: 1em;
 
   @include desktop {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
@@ -50,7 +50,12 @@
   &:nth-child(1) {
     background: rgba($highlight-color2, 1);
   }
+
   &:nth-child(2) {
+    background: $gradient;
+  }
+
+  &:nth-child(5) {
     background: $gradient;
   }
 
@@ -83,10 +88,10 @@
   }
 
   @include desktop {
-    &:nth-child(4) {
+    &:nth-child(5) {
       width: 80%;
       justify-self: end;
-      grid-column: 3;
+      grid-column: 4;
     }
   }
 }

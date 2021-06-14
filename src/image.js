@@ -32,8 +32,8 @@ const useAspect = (width, height, factor) => {
 };
 
 const scale = useAspect(
-  1200, // Pixel-width
-  1600, // Pixel-height
+  700, // Pixel-width
+  1000, // Pixel-height
   1 // Optional scaling factor
 );
 
@@ -81,7 +81,7 @@ const onMouseMove = (e) => {
   });
 };
 
-window.addEventListener("touchmove", (e) => onTouchMove(e));
+window.addEventListener("touchmove", (e) => onTouchMove(e), { passive: true });
 
 const onTouchMove = (e) => {
   gsap.to(mouse, {
