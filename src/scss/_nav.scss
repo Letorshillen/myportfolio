@@ -17,15 +17,16 @@ nav {
   background-image: url("../../static/images/icon.svg");
   background-size: auto;
   background-repeat: no-repeat;
-  transition: transform 1s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  font-size: 0;
 
   &:hover,
   &:focus {
-    transform: rotate(720deg);
+    transform: rotate(123deg);
   }
 }
 
-.js__nav__burger {
+.nav__burger {
   position: absolute;
   right: 0;
   top: 0;
@@ -48,7 +49,7 @@ nav {
   }
 }
 
-.js__nav--close {
+.nav--close {
   transform: rotate(0.5turn);
   top: 10px;
 
@@ -70,7 +71,7 @@ nav {
   }
 }
 
-.js__nav__link {
+.nav__link {
   text-decoration: none;
   color: $primary-color;
   margin: 20px 0;
@@ -99,7 +100,7 @@ nav {
   }
 }
 
-.js__nav__inner {
+.nav__inner {
   display: inline-flex;
   overflow: hidden;
   width: 100%;
@@ -120,7 +121,7 @@ nav {
   }
 }
 
-.js__nav__inner--close {
+.nav__inner--close {
   height: 100vh;
 
   @include tablet {

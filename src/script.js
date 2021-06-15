@@ -12,21 +12,21 @@ gsap.registerPlugin(ScrollTrigger);
  * Nav
  */
 const main = document.querySelector("main");
-const nav__burger = document.querySelector(".js__nav__burger");
-const nav__inner = document.querySelector(".js__nav__inner");
-const nav__link = document.querySelectorAll(".js__nav__link");
+const nav__burger = document.querySelector(".nav__burger");
+const nav__inner = document.querySelector(".nav__inner");
+const nav__link = document.querySelectorAll(".nav__link");
 
 let show__nav__inner = false;
 
 nav__burger.addEventListener("click", () => {
   if (!show__nav__inner) {
-    nav__burger.classList.add("js__nav--close");
-    nav__inner.classList.add("js__nav__inner--close");
+    nav__burger.classList.add("nav--close");
+    nav__inner.classList.add("nav__inner--close");
     main.style.visibility = "hidden";
     show__nav__inner = true;
   } else {
-    nav__burger.classList.remove("js__nav--close");
-    nav__inner.classList.remove("js__nav__inner--close");
+    nav__burger.classList.remove("nav--close");
+    nav__inner.classList.remove("nav__inner--close");
     main.style.visibility = "visible";
     show__nav__inner = false;
   }
@@ -34,8 +34,8 @@ nav__burger.addEventListener("click", () => {
 
 nav__link.forEach((item) => {
   item.addEventListener("click", () => {
-    nav__burger.classList.remove("js__nav--close");
-    nav__inner.classList.remove("js__nav__inner--close");
+    nav__burger.classList.remove("nav--close");
+    nav__inner.classList.remove("nav__inner--close");
     main.style.visibility = "visible";
     show__nav__inner = false;
   });
@@ -44,8 +44,8 @@ nav__link.forEach((item) => {
 /**
  * Hero
  */
-const cta__hero = document.querySelector(".js__cta__hero");
-const section__hero = document.querySelector(".js__hero");
+const cta__hero = document.querySelector(".cta__hero");
+const section__hero = document.querySelector(".hero");
 
 const sectionOneOptions = {
   rootMargin: "-600px 0px 0px 0px",
@@ -57,11 +57,11 @@ const sectionObserver = new IntersectionObserver(function (
 ) {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) {
-      cta__hero.classList.add("js__cta--scrolled");
+      cta__hero.classList.add("cta--scrolled");
       cta__hero.classList.remove("all__cta");
       cta__hero.innerHTML = "";
     } else {
-      cta__hero.classList.remove("js__cta--scrolled");
+      cta__hero.classList.remove("cta--scrolled");
       cta__hero.classList.add("all__cta");
       cta__hero.innerHTML = "schreib mir";
     }

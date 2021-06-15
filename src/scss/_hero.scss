@@ -1,4 +1,4 @@
-.js__hero {
+.hero {
   background: $primary-color;
   width: 100%;
   height: 90vh;
@@ -10,7 +10,7 @@
   cursor: grab;
 }
 
-.js__hero:active {
+.hero:active {
   cursor: grabbing;
 }
 
@@ -32,7 +32,7 @@
   }
 }
 
-.js__cta__hero {
+.cta__hero {
   bottom: 30%;
   right: 30%;
   transition: all 0.5s ease-out;
@@ -44,7 +44,7 @@
   // }
 }
 
-.js__cta--scrolled {
+.cta--scrolled {
   transform: translateX(0%);
   outline: 0;
   width: 60px;
@@ -59,6 +59,7 @@
   bottom: 3%;
   right: 3%;
   z-index: 100;
+  font-size: 0;
 
   &:hover,
   &:focus {
