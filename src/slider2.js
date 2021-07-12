@@ -14,7 +14,6 @@ const canvas = document.querySelector(".slider2");
 
 const app = new PIXI.Application({
   backgroundColor: 0xffffff,
-  // resizeTo: canvas,
   width: 1500,
   height: 500,
 });
@@ -22,17 +21,17 @@ canvas.appendChild(app.view);
 
 //Load Images into Pixi
 
-function loadImages(paths, whenLoaded) {
-  var imgs = [];
-  paths.forEach(function (path) {
-    var img = new Image();
-    img.onload = function () {
+const loadImages = (paths, whenLoaded) => {
+  let imgs = [];
+  paths.forEach((path) => {
+    let img = new Image();
+    img.onload = () => {
       imgs.push(img);
       if (imgs.length == paths.length) whenLoaded(imgs);
     };
     img.src = path;
   });
-}
+};
 
 const images = [img1, img2, img3, img4, img5];
 
@@ -44,19 +43,6 @@ app.stage.addChild(container);
 const margin = 30;
 let width = (canvas.clientWidth - 2 * margin) / 3;
 let height = canvas.clientHeight;
-
-//resize
-// const resize = () => {
-//   const parent = app.view.parentNode;
-//   console.log(canvas.offsetWidth);
-
-//   width = (canvas.offsetWidth - 2 * margin) / 3;
-//   height = canvas.offsetHeight;
-
-//   console.log(width);
-// };
-
-// window.addEventListener("resize", resize);
 
 //slider variables
 const thumbs = [];
